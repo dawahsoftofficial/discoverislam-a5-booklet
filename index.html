@@ -13,14 +13,9 @@
   /* Discover Islam palette */
   --di-gold:#CB892A; --di-gold-hi:#EDB52B; --di-green:#408360; --di-green-d:#2B5E45;
   --di-deep:#0A1D15; --di-cream:#F6F2E9; --di-sage:#AFCBB5;
-  /* New Muslim Centre palette */
-  --nmc-rose:#D6457F; --nmc-coral:#E2685C; --nmc-amber:#D48A1E; --nmc-gold:#F5B51F;
-  --nmc-navy:#1D1B46; --nmc-deep:#15132F; --nmc-lav:#EFECF7; --nmc-muted:#6E6A93;
   /* shared */
   --ink:#141414; --muted:#5E625F; --paper:#FBF9F4;
   --g-di:linear-gradient(90deg,var(--di-gold-hi),var(--di-gold));
-  --g-nmc:linear-gradient(90deg,var(--nmc-rose),var(--nmc-coral) 50%,var(--nmc-amber));
-  --g-both:linear-gradient(90deg,var(--di-gold-hi),var(--di-gold) 35%,var(--nmc-coral) 70%,var(--nmc-rose));
   --display:"Outfit",system-ui,sans-serif; --body:"Mulish",system-ui,sans-serif;
   --pw:794px; --ph:560px;
 }
@@ -78,27 +73,20 @@ body.overview .sheet-label{display:block}
 .right .page-foot{flex-direction:row-reverse}
 
 .eyebrow{align-self:flex-start;font:800 10.5px/1.2 var(--body);letter-spacing:2.2px;text-transform:uppercase;color:var(--di-green-d);display:inline-block;padding-bottom:9px;position:relative}
-.eyebrow::after{content:"";position:absolute;left:0;bottom:0;width:100%;min-width:90px;height:2px;border-radius:2px;background:var(--g-both)}
+.eyebrow::after{content:"";position:absolute;left:0;bottom:0;width:100%;min-width:90px;height:2px;border-radius:2px;background:var(--g-di)}
 .on-dark .eyebrow{color:#fff}
 .h-xl{font:700 40px/1.04 var(--display);letter-spacing:-.8px}
 .h-lg{font:700 34px/1.06 var(--display);letter-spacing:-.6px}
 .grad-di{background:var(--g-di);-webkit-background-clip:text;background-clip:text;color:transparent}
-.grad-nmc{background:var(--g-nmc);-webkit-background-clip:text;background-clip:text;color:transparent}
-.grad-both{background:var(--g-both);-webkit-background-clip:text;background-clip:text;color:transparent}
+.grad-nmc{background:var(--g-di);-webkit-background-clip:text;background-clip:text;color:transparent}
+.grad-both{background:var(--g-di);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lede{font:500 13px/1.6 var(--body);color:var(--muted)}
 .pattern{position:absolute;inset:0;pointer-events:none;opacity:.55;background-size:64px 64px}
 .pattern.di{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 8l5 12 12-5-5 12 12 5-12 5 5 12-12-5-5 12-5-12-12 5 5-12-12-5 12-5-5-12 12 5z' fill='none' stroke='%23CB892A' stroke-opacity='.16' stroke-width='1'/%3E%3C/svg%3E")}
-.pattern.nmc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 8l5 12 12-5-5 12 12 5-12 5 5 12-12-5-5 12-5-12-12 5 5-12-12-5 12-5-5-12 12 5z' fill='none' stroke='%23D6457F' stroke-opacity='.14' stroke-width='1'/%3E%3C/svg%3E")}
+.pattern.nmc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 8l5 12 12-5-5 12 12 5-12 5 5 12-12-5-5 12-5-12-12 5 5-12-12-5 12-5-5-12 12 5z' fill='none' stroke='%23CB892A' stroke-opacity='.16' stroke-width='1'/%3E%3C/svg%3E")}
 .ico{width:24px;height:24px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .ico.di{stroke:url(#gr-di)} .ico.nmc{stroke:url(#gr-nmc)}
 
-/* NMC lockup (placeholder until official logo supplied) */
-.nmc-logo{display:inline-flex;align-items:center;gap:12px;color:var(--nmc-navy)}
-.nmc-logo svg{width:44px;height:44px;flex:none}
-.nmc-logo span{display:flex;flex-direction:column;line-height:1}
-.nmc-logo b{font:700 21px/1 var(--display);letter-spacing:-.3px}
-.nmc-logo i{font:700 11px/1 var(--display);font-style:normal;letter-spacing:4.2px;margin-top:5px;background:var(--g-nmc);-webkit-background-clip:text;background-clip:text;color:transparent}
-.nmc-logo.light{color:#fff}
 
 /* ───────────── Cover ───────────── */
 .cover{background:var(--di-deep);color:#fff;padding:46px 50px}
@@ -109,7 +97,7 @@ body.overview .sheet-label{display:block}
 .cover .top i{width:5px;height:5px;border-radius:50%;background:var(--di-gold);display:inline-block}
 .cover h1{margin-top:auto;font:800 76px/.92 var(--display);letter-spacing:-2.2px}
 .cover h1 .grad-both{display:inline-block;padding-bottom:6px}
-.cover .rule{width:120px;height:3px;border-radius:3px;background:var(--g-both);margin:26px 0 22px}
+.cover .rule{width:120px;height:3px;border-radius:3px;background:var(--g-di);margin:26px 0 22px}
 .cover .tag{font:500 14px/1.5 var(--body);color:#ffffffc4;max-width:330px}
 .cover .brands{margin-top:auto;display:flex;align-items:center;gap:26px}
 .cover .brands img{height:40px}
@@ -127,7 +115,7 @@ body.overview .sheet-label{display:block}
 .sig b{display:block;font:700 13px/1.3 var(--display)}
 .sig span{font-size:10.5px;color:var(--muted)}
 .fw-r{background:var(--di-cream);display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:center;padding-top:52px}
-.portrait{border-radius:18px;padding:3px;background:linear-gradient(140deg,var(--di-gold-hi),var(--di-green) 45%,var(--nmc-rose))}
+.portrait{border-radius:18px;padding:3px;background:linear-gradient(140deg,var(--di-gold-hi),var(--di-green) 45%,var(--di-gold))}
 .portrait img{display:block;width:100%;height:300px;object-fit:cover;object-position:center 20%;border-radius:15px}
 .portrait-cap{margin-top:12px}
 .portrait-cap b{display:block;font:700 14px/1.3 var(--display)}
@@ -138,22 +126,28 @@ body.overview .sheet-label{display:block}
 /* ───────────── Brand pages (1 & 2) ───────────── */
 .brand-page{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 70px 70px}
 .brand-page.di{background:var(--di-cream)}
-.brand-page.nmc{background:var(--nmc-lav)}
+.brand-page.nmc{background:var(--di-cream)}
 .brand-page .est{position:absolute;top:40px;left:46px;font:800 10px/1 var(--body);letter-spacing:2.2px;text-transform:uppercase;padding:8px 12px;border-radius:30px}
 .brand-page.di .est{background:#fff;color:var(--di-green-d);box-shadow:0 0 0 1px #cb892a33}
-.brand-page.nmc .est{background:#fff;color:var(--nmc-navy);box-shadow:0 0 0 1px #d6457f33;left:auto;right:46px}
+.brand-page.nmc .est{background:#fff;color:var(--di-deep);box-shadow:0 0 0 1px #cb892a33;left:auto;right:46px}
 .brand-page .logo-main{position:relative;z-index:2}
 .brand-page.di .logo-main img{width:330px}
-.brand-page.nmc .nmc-name{font:700 46px/1.05 var(--display);letter-spacing:-1.2px;color:var(--nmc-navy)}
-.brand-page.nmc .nmc-logo svg{width:96px;height:96px}
-.brand-page.nmc .nmc-logo b{font-size:44px;letter-spacing:-1px}
-.brand-page.nmc .nmc-logo i{font-size:20px;letter-spacing:9px;margin-top:9px}
+.nmc-logo{display:inline-flex;flex-direction:column;line-height:1;color:var(--di-deep)}
+.nmc-logo b{font:700 21px/1 var(--display);letter-spacing:-.3px}
+.nmc-logo i{font:700 11px/1 var(--display);font-style:normal;letter-spacing:4.2px;margin-top:5px;background:var(--g-di);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nmc-logo.light{color:#fff}
+.brand-page .nmc-logo b{font-size:48px;letter-spacing:-1.2px}
+.brand-page .nmc-logo i{font-size:20px;letter-spacing:9px;margin-top:10px}
+.brandpill .nmc-logo b{font-size:15px}
+.brandpill .nmc-logo i{font-size:8px;letter-spacing:3px;margin-top:3px}
+.back .nmc-logo b{font-size:27px;letter-spacing:-.5px}
+.back .nmc-logo i{font-size:13px;letter-spacing:5.5px;margin-top:6px}
 .brand-page .rule{width:64px;height:3px;border-radius:3px;margin:34px auto 26px;position:relative;z-index:2}
-.brand-page.di .rule{background:var(--g-di)} .brand-page.nmc .rule{background:var(--g-nmc)}
+.brand-page.di .rule{background:var(--g-di)} .brand-page.nmc .rule{background:var(--g-di)}
 .brand-page p{text-wrap:balance;position:relative;z-index:2;font:400 21px/1.38 var(--display);max-width:520px;letter-spacing:-.2px}
-.brand-page.di p{color:var(--di-deep)} .brand-page.nmc p{color:var(--nmc-navy)}
+.brand-page.di p{color:var(--di-deep)} .brand-page.nmc p{color:var(--di-deep)}
 .brand-page .role{position:relative;z-index:2;margin-top:24px;font:800 10px/1 var(--body);letter-spacing:2.4px;text-transform:uppercase}
-.brand-page.di .role{color:var(--di-green)} .brand-page.nmc .role{color:var(--nmc-rose)}
+.brand-page .role{color:var(--di-green)}
 
 /* ───────────── Services (3 & 4) ───────────── */
 .svc-l{display:flex;flex-direction:column;background:var(--paper)}
@@ -161,7 +155,7 @@ body.overview .sheet-label{display:block}
 .svc-l .cols{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:34px}
 .since{padding-top:18px;border-top:2px solid #0000001a;position:relative}
 .since::before{content:"";position:absolute;left:0;top:-2px;width:56px;height:2px}
-.since.di::before{background:var(--g-di)} .since.nmc::before{background:var(--g-nmc)}
+.since.di::before{background:var(--g-di)} .since.nmc::before{background:var(--g-di)}
 .since .yr{font:800 64px/1 var(--display);letter-spacing:-2.4px;display:inline-block}
 .since .yr small{display:block;font:800 9.5px/1 var(--body);letter-spacing:2px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;-webkit-text-fill-color:var(--muted)}
 .since h3{font:700 17px/1.2 var(--display);margin:14px 0 8px}
@@ -172,11 +166,11 @@ body.overview .sheet-label{display:block}
 .grp{display:flex;align-items:center;gap:8px;font:800 9.5px/1 var(--body);letter-spacing:2px;text-transform:uppercase;margin:18px 0 10px}
 .grp i{width:16px;height:3px;border-radius:2px;display:inline-block}
 .grp.di{color:var(--di-green-d)} .grp.di i{background:var(--g-di)}
-.grp.nmc{color:var(--nmc-navy)} .grp.nmc i{background:var(--g-nmc)}
+.grp.nmc{color:var(--di-deep)} .grp.nmc i{background:var(--g-di)}
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .tile{display:flex;gap:12px;align-items:center;padding:14px 13px;border-radius:14px;background:var(--paper);border:1px solid #0000000d;min-height:84px}
 .tile .ib{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;flex:none}
-.tile.di .ib{background:#CB892A14} .tile.nmc .ib{background:#D6457F12}
+.tile .ib{background:#CB892A14}
 .tile b{display:block;font:700 13.5px/1.2 var(--display)}
 .tile .ib .ico{width:26px;height:26px}
 .tile span{display:block;font:500 10.4px/1.35 var(--body);color:var(--muted);margin-top:2px}
@@ -191,20 +185,18 @@ body.overview .sheet-label{display:block}
 .imp-l .yrs b{font:800 64px/1 var(--display);letter-spacing:-2px}
 .imp-l .yrs span{font:600 13px/1.3 var(--display);color:#ffffffcc;max-width:150px}
 .imp-l p{font:400 12.2px/1.62 var(--body);color:#ffffffd9;max-width:560px;margin-bottom:8px}
-.imp-r{background:radial-gradient(90% 70% at 85% 0%,#2a2350 0%,#0000 60%),radial-gradient(80% 70% at 0% 100%,#173b2c 0%,#0000 60%),#0C1512;color:#fff;padding:36px 42px 60px}
+.imp-r{background:radial-gradient(90% 70% at 85% 0%,#1E4A37 0%,#0000 60%),radial-gradient(80% 70% at 0% 100%,#173b2c 0%,#0000 60%),#0C1512;color:#fff;padding:36px 42px 60px}
 .imp-r .eyebrow{color:#fff}
 .imp-r h2{font:700 27px/1.1 var(--display);letter-spacing:-.4px;margin:14px 0 18px}
 .imp-r h2 em{font-style:normal}
 .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .st{position:relative;padding:15px 15px 15px 17px;border-radius:12px;background:#ffffff0b;border:1px solid #ffffff14;overflow:hidden}
 .st::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px}
-.st.di::before{background:linear-gradient(180deg,var(--di-gold-hi),var(--di-green))}
-.st.nmc::before{background:linear-gradient(180deg,var(--nmc-rose),var(--nmc-amber))}
+.st::before{background:linear-gradient(180deg,var(--di-gold-hi),var(--di-green))}
 .st .row{display:flex;align-items:center;gap:7px;font:700 10.5px/1.2 var(--display);color:#ffffffd1}
 .st .row .ico{width:16px;height:16px}
 .st .num{display:block;font:800 44px/1.05 var(--display);letter-spacing:-1.2px;margin-top:5px;font-variant-numeric:tabular-nums}
-.st.di .num{background:linear-gradient(90deg,#F7CC5A,var(--di-gold-hi) 45%,#E09B34);-webkit-background-clip:text;background-clip:text;color:transparent}
-.st.nmc .num{background:linear-gradient(90deg,#F06A9A,var(--nmc-coral) 50%,var(--nmc-gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.st .num{background:linear-gradient(90deg,#F7CC5A,var(--di-gold-hi) 45%,#E09B34);-webkit-background-clip:text;background-clip:text;color:transparent}
 .st small{display:block;font:500 10.2px/1.3 var(--body);color:#ffffffa6;margin-top:1px}
 .st.hero .num{font-size:44px}
 
@@ -216,8 +208,7 @@ body.overview .sheet-label{display:block}
 .prog .bgw::after{content:"";position:absolute;inset:0;background:
   linear-gradient(0deg,var(--deep) 0%,color-mix(in srgb,var(--deep) 92%,transparent) 30%,color-mix(in srgb,var(--deep) 55%,transparent) 54%,transparent 78%),
   linear-gradient(90deg,color-mix(in srgb,var(--deep) 80%,transparent) 0%,color-mix(in srgb,var(--deep) 30%,transparent) 22%,transparent 40%)}
-.di-theme{--deep:#08180F;--acc:var(--di-gold-hi);--acc2:var(--di-green);--grad:var(--g-di)}
-.nmc-theme{--deep:#15122E;--acc:#F6A85A;--acc2:var(--nmc-rose);--grad:var(--g-nmc)}
+.di-theme,.nmc-theme{--deep:#08180F;--acc:var(--di-gold-hi);--acc2:var(--di-green);--grad:var(--g-di)}
 .prog .inner{position:absolute;inset:0;padding:30px 44px 60px;display:flex;flex-direction:column;z-index:2}
 .chip{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;padding:9px 13px 10px;border-radius:9px;background:#0b0b0b8c;backdrop-filter:blur(6px);font:800 10px/1 var(--body);letter-spacing:2px;text-transform:uppercase;position:relative}
 .chip::after{content:"";position:absolute;left:13px;right:13px;bottom:5px;height:2px;border-radius:2px;background:var(--grad)}
@@ -238,9 +229,6 @@ body.overview .sheet-label{display:block}
 .tl span.l{display:block;font:600 10.2px/1.35 var(--body);color:#ffffffbf;margin-top:5px}
 .brandpill{position:absolute;top:28px;right:40px;z-index:3;background:#fffffff2;border-radius:12px;padding:9px 14px;display:flex;align-items:center;box-shadow:0 6px 24px #00000033}
 .brandpill img{height:30px;display:block}
-.brandpill .nmc-logo svg{width:30px;height:30px}
-.brandpill .nmc-logo b{font-size:14px}
-.brandpill .nmc-logo i{font-size:8px;letter-spacing:3px;margin-top:3px}
 .voice{margin-top:auto;max-width:600px}
 .voice .lbl{font:800 10px/1 var(--body);letter-spacing:2.2px;text-transform:uppercase;color:var(--acc)}
 .voice .qm{font:800 60px/.55 var(--display);height:30px;margin-top:16px;display:block;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -250,7 +238,7 @@ body.overview .sheet-label{display:block}
 .voice .who span{font:500 10.5px/1.2 var(--body);color:#ffffffa6}
 .voice .who em{width:4px;height:4px;border-radius:50%;background:var(--acc)}
 .checks{margin-top:auto;display:grid;gap:10px;max-width:520px}
-.checks .lbl{font:800 10px/1 var(--body);letter-spacing:2.2px;text-transform:uppercase;color:var(--acc);margin-bottom:6px}
+.checks .lbl{text-shadow:0 1px 8px #000c;font:800 10px/1 var(--body);letter-spacing:2.2px;text-transform:uppercase;color:var(--acc);margin-bottom:6px}
 .checks div.c{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:#ffffff12;border:1px solid #ffffff1f;backdrop-filter:blur(6px);font:600 15px/1.3 var(--display)}
 .checks div.c i{width:24px;height:24px;border-radius:50%;background:var(--grad);display:grid;place-items:center;flex:none}
 .checks div.c svg{width:13px;height:13px;stroke:#08180F;stroke-width:3;fill:none}
@@ -260,22 +248,17 @@ body.overview .sheet-label{display:block}
 .credit{position:absolute;right:44px;bottom:42px;z-index:3;font:500 8.5px/1 var(--body);color:#ffffff73;letter-spacing:.4px}
 
 /* ───────────── Closing ───────────── */
-.close-l{color:#fff;padding:0}
-.close-l .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.close-l .shade{position:absolute;inset:0;background:linear-gradient(0deg,#07140ff2 8%,#07140f99 40%,#0000 70%)}
-.close-l .content{position:absolute;inset:0;padding:44px 46px 62px;display:flex;flex-direction:column;justify-content:flex-end;z-index:2}
-.close-l h2{font:700 44px/1 var(--display);letter-spacing:-1px}
-.close-l p{font:400 12.5px/1.6 var(--body);color:#ffffffd9;margin:12px 0 18px;max-width:470px}
-.ways{display:flex;gap:10px}
-.ways span{padding:9px 14px;border-radius:30px;border:1px solid #ffffff40;background:#ffffff14;font:700 12px/1 var(--display)}
-.back{background:linear-gradient(135deg,#0B2117 0%,#0F1A1A 45%,#1A1838 100%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.ways-cards div.c{padding:14px 16px}
+.ways-cards div.c span{font:500 11px/1.35 var(--body);color:#ffffffbf}
+.ways-cards div.c b{display:block;font:700 16px/1.2 var(--display);color:#fff;margin-bottom:2px}
+.ways-cards div.c i svg{stroke:#08180F;stroke-width:2.4}
+.back{background:linear-gradient(135deg,#0B2117 0%,#0A1D15 50%,#123326 100%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .back .marks{display:flex;align-items:center;gap:30px}
 .back .marks img{height:56px}
 .back .marks .sep{width:1px;height:46px;background:#ffffff33}
 .back h2{font:700 30px/1.1 var(--display);letter-spacing:-.6px;margin:34px 0 10px}
-.back .rule{width:70px;height:3px;border-radius:3px;background:var(--g-both);margin:0 auto 22px}
+.back .rule{width:70px;height:3px;border-radius:3px;background:var(--g-di);margin:0 auto 22px}
 .back .contact{font:500 11.5px/1.8 var(--body);color:#ffffffb3}
-.back .contact b{color:#fff;font-weight:700}
 
 /* ───────────── Print ───────────── */
 @page{size:210mm 148mm;margin:0}
@@ -291,10 +274,8 @@ body.overview .sheet-label{display:block}
   .page{width:210mm;height:147.9mm;break-after:page;page-break-after:always;box-shadow:none!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   /* PDF engines leave hairline slivers beside background-clip:text — print solid brand colours instead */
-  .grad-di,.grad-nmc,.grad-both,.st .num,.tl .next b,.voice .qm,.nmc-logo i,.highlight b{background:none!important;-webkit-text-fill-color:currentColor}
-  .grad-di,.st.di .num,.di-theme .tl .next b,.di-theme .voice .qm{color:#E0A12C}
-  .grad-nmc,.st.nmc .num,.nmc-theme .tl .next b,.nmc-theme .voice .qm,.nmc-logo i{color:#E2685C}
-  .grad-both{color:#E3A52E}
+  .grad-di,.grad-nmc,.grad-both,.st .num,.tl .next b,.voice .qm,.highlight b,.nmc-logo i{background:none!important;-webkit-text-fill-color:currentColor}
+  .grad-di,.grad-nmc,.grad-both,.st .num,.tl .next b,.voice .qm,.nmc-logo i{color:#E0A12C}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media (max-width:700px){
@@ -311,8 +292,7 @@ body.overview .sheet-label{display:block}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <linearGradient id="gr-di" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22"><stop offset="0" stop-color="#EDB52B"/><stop offset=".55" stop-color="#CB892A"/><stop offset="1" stop-color="#408360"/></linearGradient>
-    <linearGradient id="gr-nmc" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22"><stop offset="0" stop-color="#D6457F"/><stop offset=".5" stop-color="#E2685C"/><stop offset="1" stop-color="#D48A1E"/></linearGradient>
-    <linearGradient id="gr-star" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EE6DA0"/><stop offset=".5" stop-color="#F1AF67"/><stop offset="1" stop-color="#F4D367"/></linearGradient>
+    <linearGradient id="gr-nmc" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22"><stop offset="0" stop-color="#EDB52B"/><stop offset=".55" stop-color="#CB892A"/><stop offset="1" stop-color="#408360"/></linearGradient>
     <symbol id="i-school" viewBox="0 0 24 24"><path d="M22 9.5 12 4.5 2 9.5l10 5 10-5Z"/><path d="M6 11.5v5c3.5 3 8.5 3 12 0v-5"/><path d="M22 9.5v5.5"/></symbol>
     <symbol id="i-exhibit" viewBox="0 0 24 24"><path d="M3 3.5h18"/><path d="M4 3.5v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-10"/><path d="m8 20.5 4-5 4 5"/><path d="M8.5 11 11 8.5l2 2 3-3.5"/></symbol>
     <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4.5h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2Z"/><path d="M22 4.5h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7Z"/></symbol>
@@ -323,7 +303,6 @@ body.overview .sheet-label{display:block}
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></symbol>
-    <symbol id="nmc-mark" viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#1D1B46"/><path d="M20 6l2.6 8.2L29.9 10l-4.2 7.4L34 20l-8.3 2.6 4.2 7.4-7.3-4.2L20 34l-2.6-8.2-7.3 4.2 4.2-7.4L6 20l8.3-2.6L10.1 10l7.3 4.2z" fill="url(#gr-star)"/><circle cx="20" cy="20" r="3.2" fill="#1D1B46"/></symbol>
   </defs>
 </svg>
 
@@ -356,6 +335,8 @@ body.overview .sheet-label{display:block}
       <p class="tag">From understanding Islam to belonging for life.</p>
       <div class="brands">
         <img src="assets/di-logo.png" alt="Discover Islam">
+        <span class="sep"></span>
+        <div class="nmc-logo light"><b>New Muslim</b><i>CENTRE</i></div>
       </div>
     </div>
   </article>
@@ -411,7 +392,7 @@ body.overview .sheet-label{display:block}
   <article class="page brand-page nmc right">
     <div class="pattern nmc"></div>
     <span class="est">Est. 2022</span>
-    <h2 class="logo-main nmc-name">New Muslim Centre</h2>
+    <div class="logo-main"><div class="nmc-logo"><b>New Muslim</b><i>CENTRE</i></div></div>
     <div class="rule"></div>
     <p>Working towards an ecosystem of care and development for new Muslims through a variety of solutions.</p>
     <div class="role">Care &amp; development</div>
@@ -556,7 +537,7 @@ body.overview .sheet-label{display:block}
 <!-- ═════════ PAGES 11–12: LITERATURE ═════════ -->
 <section class="sheet spread di-theme" data-label="Pages 11–12 · Literature" aria-label="Pages 11 and 12: Literature" hidden>
   <article class="page prog on-dark">
-    <div class="bgw"><img src="assets/ai-literature.jpg" alt=""></div>
+    <div class="bgw"><img src="assets/literature-hero-bg.jpg" alt="" style="object-position:50% 62%"></div>
     <div class="inner">
       <span class="chip"><svg class="ico"><use href="#i-book"/></svg>11 / Literature</span>
       <h2>Literature</h2>
@@ -571,10 +552,10 @@ body.overview .sheet-label{display:block}
     <div class="page-foot"><b>11</b><span>Discover Islam</span></div>
   </article>
   <article class="page prog on-dark right">
-    <div class="bgw"><img src="assets/ai-literature.jpg" alt="A booklet being handed over at a London outreach stall"></div>
+    <div class="bgw"><img src="assets/literature-hero-bg.jpg" alt="Islamic books on display at a literature stall" style="object-position:50% 62%"></div>
     <div class="brandpill"><img src="assets/di-logo.png" alt="Discover Islam"></div>
     <div class="inner">
-      <div class="checks">
+      <div class="checks" style="margin-top:68px">
         <span class="lbl">Why it works</span>
         <div class="c"><i><svg><use href="#i-check"/></svg></i>Approved by qualified scholars</div>
         <div class="c"><i><svg><use href="#i-check"/></svg></i>Clear, concise and engaging</div>
@@ -637,6 +618,7 @@ body.overview .sheet-label{display:block}
   </article>
   <article class="page prog on-dark right">
     <div class="bgw"><img src="assets/ai-wellbeing.jpg" alt="Men sharing tea at a well-being hub"></div>
+    <div class="brandpill"><div class="nmc-logo"><b>New Muslim</b><i>CENTRE</i></div></div>
     <div class="inner">
       <div class="voice">
         <span class="lbl">Community voice</span>
@@ -668,6 +650,7 @@ body.overview .sheet-label{display:block}
   </article>
   <article class="page prog on-dark right">
     <div class="bgw"><img src="assets/ai-umrah.jpg" alt="Pilgrims in ihram at the Prophet’s Mosque in Madinah"></div>
+    <div class="brandpill"><div class="nmc-logo"><b>New Muslim</b><i>CENTRE</i></div></div>
     <div class="inner">
       <div class="voice">
         <span class="lbl">Community voice</span>
@@ -680,26 +663,46 @@ body.overview .sheet-label{display:block}
   </article>
 </section>
 
-<!-- ═════════ CLOSING ═════════ -->
-<section class="sheet spread" data-label="Back cover" aria-label="Back cover" hidden>
-  <article class="page close-l on-dark">
-    <img class="bg" src="assets/ai-mosque-visit.jpg" alt="Students on a mosque visit">
-    <div class="shade"></div>
-    <div class="content">
-      <span class="eyebrow">Get involved</span>
-      <h2 style="margin-top:16px">Be part of the cycle.</h2>
-      <p>Every visit, exhibition, booklet and box is made possible by people who give their time, skills and support.</p>
-      <div class="ways"><span>Donate</span><span>Volunteer</span><span>Partner with us</span></div>
+<!-- ═════════ PAGES 19–20: GET INVOLVED ═════════ -->
+<section class="sheet spread di-theme" data-label="Pages 19–20 · Get involved" aria-label="Pages 19 and 20: Get involved" hidden>
+  <article class="page prog on-dark">
+    <div class="bgw"><img src="assets/ai-mosque-visit.jpg" alt="" style="object-position:50% 58%"></div>
+    <div class="inner">
+      <span class="chip"><svg class="ico"><use href="#i-heart"/></svg>19 / Get involved</span>
+      <h2>Be part of the cycle.</h2>
+      <p class="subt">Every journey needs people behind it.</p>
+      <p class="body">Every visit, exhibition, booklet and box is made possible by people who give their time, skills and support.</p>
     </div>
+    <div class="page-foot"><b>19</b><span>Get involved</span></div>
   </article>
-  <article class="page back right">
+  <article class="page prog on-dark right">
+    <div class="bgw"><img src="assets/ai-mosque-visit.jpg" alt="Students on a mosque visit" style="object-position:50% 58%"></div>
+    <div class="brandpill"><img src="assets/di-logo.png" alt="Discover Islam"></div>
+    <div class="inner">
+      <div class="checks ways-cards">
+        <span class="lbl">Three ways to help</span>
+        <div class="c"><i><svg><use href="#i-heart"/></svg></i><span><b>Donate</b>Support our work</span></div>
+        <div class="c"><i><svg><use href="#i-school"/></svg></i><span><b>Volunteer</b>Give your time and skills</span></div>
+        <div class="c"><i><svg><use href="#i-exhibit"/></svg></i><span><b>Partner with us</b>Host or collaborate with us</span></div>
+      </div>
+    </div>
+    <div class="page-foot"><b>20</b><span>Get involved</span></div>
+  </article>
+</section>
+
+<!-- ═════════ BACK COVER ═════════ -->
+<section class="sheet single" data-label="Back cover" aria-label="Back cover" hidden>
+  <div class="blank"></div>
+  <article class="page back">
     <div class="pattern di" style="opacity:.25"></div>
     <div class="marks" style="position:relative">
       <img src="assets/di-logo.png" alt="Discover Islam">
+      <span class="sep"></span>
+      <div class="nmc-logo light"><b>New Muslim</b><i>CENTRE</i></div>
     </div>
     <h2 style="position:relative">A Wholistic Da’wa Cycle.</h2>
     <div class="rule"></div>
-    <p class="contact" style="position:relative"><b>discoverislam.co.uk</b> · info@discoverislam.co.uk<br>7 Bridges Place, Parsons Green, London SW6 4HW<br>Registered Charity No. 1146212</p>
+    <p class="contact" style="position:relative">7 Bridges Place, Parsons Green, London SW6 4HW<br>Registered Charity No. 1146212</p>
   </article>
 </section>
 
