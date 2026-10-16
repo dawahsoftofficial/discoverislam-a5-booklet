@@ -144,7 +144,7 @@ body.overview .sheet-label{display:block}
 .brand-page.nmc .est{background:#fff;color:var(--nmc-navy);box-shadow:0 0 0 1px #d6457f33;left:auto;right:46px}
 .brand-page .logo-main{position:relative;z-index:2}
 .brand-page.di .logo-main img{width:330px}
-.brand-page.nmc .nmc-logo{gap:20px}
+.brand-page.nmc .nmc-name{font:700 46px/1.05 var(--display);letter-spacing:-1.2px;color:var(--nmc-navy)}
 .brand-page.nmc .nmc-logo svg{width:96px;height:96px}
 .brand-page.nmc .nmc-logo b{font-size:44px;letter-spacing:-1px}
 .brand-page.nmc .nmc-logo i{font-size:20px;letter-spacing:9px;margin-top:9px}
@@ -156,17 +156,16 @@ body.overview .sheet-label{display:block}
 .brand-page.di .role{color:var(--di-green)} .brand-page.nmc .role{color:var(--nmc-rose)}
 
 /* ───────────── Services (3 & 4) ───────────── */
-.svc-l{display:grid;grid-template-columns:1.18fr 1fr;gap:26px;align-items:center;background:var(--paper)}
-.svc-l .h-xl{margin:20px 0 22px}
-.since{display:grid;grid-template-columns:86px 1fr;gap:14px;padding:14px 0;border-top:1px solid #0000001a}
-.since .yr{font:800 30px/1 var(--display);letter-spacing:-1px}
-.since .yr small{display:block;font:800 9px/1 var(--body);letter-spacing:1.8px;color:var(--muted);margin-bottom:5px;text-transform:uppercase;-webkit-text-fill-color:var(--muted)}
-.since h3{font:700 13.5px/1.2 var(--display);margin-bottom:5px}
-.since p{font:400 11.4px/1.58 var(--body);color:#3f423f}
-.cycle svg{width:100%;height:auto;display:block}
-.cycle text{font-family:var(--display)}
-.cycle-cap{text-align:center;font:600 12.5px/1.4 var(--display);color:var(--di-deep);margin-top:4px}
-.cycle-cap span{display:block;font:500 10.5px/1.5 var(--body);color:var(--muted)}
+.svc-l{display:flex;flex-direction:column;background:var(--paper)}
+.svc-l .h-xl{margin:20px 0 0;font-size:46px}
+.svc-l .cols{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.since{padding-top:18px;border-top:2px solid #0000001a;position:relative}
+.since::before{content:"";position:absolute;left:0;top:-2px;width:56px;height:2px}
+.since.di::before{background:var(--g-di)} .since.nmc::before{background:var(--g-nmc)}
+.since .yr{font:800 64px/1 var(--display);letter-spacing:-2.4px;display:inline-block}
+.since .yr small{display:block;font:800 9.5px/1 var(--body);letter-spacing:2px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;-webkit-text-fill-color:var(--muted)}
+.since h3{font:700 17px/1.2 var(--display);margin:14px 0 8px}
+.since p{font:400 12.2px/1.62 var(--body);color:#3f423f}
 .svc-r{background:#fff}
 .svc-r .head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:22px}
 .svc-r .head h2{font:700 30px/1.05 var(--display);letter-spacing:-.4px;margin-top:14px}
@@ -357,8 +356,6 @@ body.overview .sheet-label{display:block}
       <p class="tag">From understanding Islam to belonging for life.</p>
       <div class="brands">
         <img src="assets/di-logo.png" alt="Discover Islam">
-        <span class="sep"></span>
-        <div class="nmc-logo light"><svg><use href="#nmc-mark"/></svg><span><b>New Muslim</b><i>CENTRE</i></span></div>
       </div>
     </div>
   </article>
@@ -414,7 +411,7 @@ body.overview .sheet-label{display:block}
   <article class="page brand-page nmc right">
     <div class="pattern nmc"></div>
     <span class="est">Est. 2022</span>
-    <div class="logo-main"><div class="nmc-logo"><svg><use href="#nmc-mark"/></svg><span><b>New Muslim</b><i>CENTRE</i></span></div></div>
+    <h2 class="logo-main nmc-name">New Muslim Centre</h2>
     <div class="rule"></div>
     <p>Working towards an ecosystem of care and development for new Muslims through a variety of solutions.</p>
     <div class="role">Care &amp; development</div>
@@ -425,41 +422,17 @@ body.overview .sheet-label{display:block}
 <!-- ═════════ PAGES 3–4: OUR SERVICES ═════════ -->
 <section class="sheet spread" data-label="Pages 3–4 · Our services" aria-label="Pages 3 and 4" hidden>
   <article class="page svc-l">
-    <div>
-      <span class="eyebrow">Our Services</span>
-      <h2 class="h-xl">Our services.</h2>
-      <div class="since">
+    <span class="eyebrow">Our Services</span>
+    <h2 class="h-xl">Our services.</h2>
+    <div class="cols">
+      <div class="since di">
         <div class="yr grad-di"><small>Since</small>2008</div>
-        <div><h3>Discover Islam</h3><p>Since 2008, Discover Islam has provided services across the UK to mosques, universities and public schools. We have even hosted exhibitions in highly secured government buildings such as the Ministry of Justice.</p></div>
+        <h3>Discover Islam</h3><p>Since 2008, Discover Islam has provided services across the UK to mosques, universities and public schools. We have even hosted exhibitions in highly secured government buildings such as the Ministry of Justice.</p>
       </div>
-      <div class="since">
+      <div class="since nmc">
         <div class="yr grad-nmc"><small>Since</small>2022</div>
-        <div><h3>New Muslim Centre</h3><p>Since 2022, New Muslim Centre has provided services to new Muslims to support their well-being and development after the shahada.</p></div>
+        <h3>New Muslim Centre</h3><p>Since 2022, New Muslim Centre has provided services to new Muslims to support their well-being and development after the shahada.</p>
       </div>
-    </div>
-    <div class="cycle">
-      <svg viewBox="-34 0 348 280" role="img" aria-label="The da’wa cycle: understand, embrace, belong, grow">
-        <defs>
-          <linearGradient id="ring-di" gradientUnits="userSpaceOnUse" x1="44" y1="140" x2="236" y2="140"><stop offset="0" stop-color="#408360"/><stop offset=".5" stop-color="#EDB52B"/><stop offset="1" stop-color="#CB892A"/></linearGradient>
-          <linearGradient id="ring-nmc" gradientUnits="userSpaceOnUse" x1="236" y1="140" x2="44" y2="140"><stop offset="0" stop-color="#D48A1E"/><stop offset=".5" stop-color="#E2685C"/><stop offset="1" stop-color="#D6457F"/></linearGradient>
-        </defs>
-        <circle cx="140" cy="140" r="96" fill="none" stroke="#0000000d" stroke-width="16"/>
-        <path d="M44 140A96 96 0 0 1 236 140" fill="none" stroke="url(#ring-di)" stroke-width="9" stroke-linecap="round"/>
-        <path d="M236 140A96 96 0 0 1 44 140" fill="none" stroke="url(#ring-nmc)" stroke-width="9" stroke-linecap="round"/>
-        <!-- direction chevrons -->
-        <path d="m203 70 9 1-2 9" fill="none" stroke="#CB892A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="m77 210-9-1 2-9" fill="none" stroke="#D6457F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- nodes -->
-        <g font-size="13" font-weight="700" fill="#0A1D15" text-anchor="middle">
-          <circle cx="140" cy="44" r="9" fill="#fff" stroke="#EDB52B" stroke-width="3"/><text x="140" y="22">Understand</text>
-          <circle cx="236" cy="140" r="11" fill="#CB892A"/><circle cx="236" cy="140" r="4" fill="#fff"/><text x="254" y="144" text-anchor="start">Embrace</text>
-          <circle cx="140" cy="236" r="9" fill="#fff" stroke="#E2685C" stroke-width="3"/><text x="140" y="266">Belong</text>
-          <circle cx="44" cy="140" r="9" fill="#fff" stroke="#D6457F" stroke-width="3"/><text x="26" y="144" text-anchor="end">Grow</text>
-        </g>
-        <text x="140" y="134" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="2" fill="#5E625F">THE</text>
-        <text x="140" y="156" text-anchor="middle" font-size="21" font-weight="700" fill="#0A1D15">Da’wa cycle</text>
-      </svg>
-      <p class="cycle-cap">Two organisations. One wholistic cycle.<span>Understanding Islam leads to faith; care and development help faith flourish.</span></p>
     </div>
     <div class="page-foot"><b>03</b><span>Our services</span></div>
   </article>
@@ -664,7 +637,6 @@ body.overview .sheet-label{display:block}
   </article>
   <article class="page prog on-dark right">
     <div class="bgw"><img src="assets/ai-wellbeing.jpg" alt="Men sharing tea at a well-being hub"></div>
-    <div class="brandpill"><div class="nmc-logo"><svg><use href="#nmc-mark"/></svg><span><b>New Muslim</b><i>CENTRE</i></span></div></div>
     <div class="inner">
       <div class="voice">
         <span class="lbl">Community voice</span>
@@ -696,7 +668,6 @@ body.overview .sheet-label{display:block}
   </article>
   <article class="page prog on-dark right">
     <div class="bgw"><img src="assets/ai-umrah.jpg" alt="Pilgrims in ihram at the Prophet’s Mosque in Madinah"></div>
-    <div class="brandpill"><div class="nmc-logo"><svg><use href="#nmc-mark"/></svg><span><b>New Muslim</b><i>CENTRE</i></span></div></div>
     <div class="inner">
       <div class="voice">
         <span class="lbl">Community voice</span>
@@ -725,8 +696,6 @@ body.overview .sheet-label{display:block}
     <div class="pattern di" style="opacity:.25"></div>
     <div class="marks" style="position:relative">
       <img src="assets/di-logo.png" alt="Discover Islam">
-      <span class="sep"></span>
-      <div class="nmc-logo light"><svg><use href="#nmc-mark"/></svg><span><b>New Muslim</b><i>CENTRE</i></span></div>
     </div>
     <h2 style="position:relative">A Wholistic Da’wa Cycle.</h2>
     <div class="rule"></div>
