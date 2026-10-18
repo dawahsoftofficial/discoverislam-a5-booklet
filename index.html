@@ -89,7 +89,7 @@ body.overview .sheet-label{display:block}
 
 
 /* ───────────── Cover ───────────── */
-.cover{background:var(--di-deep);color:#fff;padding:46px 50px}
+.cover{background:linear-gradient(135deg,#0B2117 0%,#0A1D15 50%,#123326 100%);color:#fff;padding:46px 50px}
 .cover .bg{position:absolute;top:-6%;right:-26%;width:96%;height:112%;object-fit:cover;object-position:center}
 .cover .shade{position:absolute;inset:0;background:radial-gradient(120% 90% at 92% 50%,#0000 22%,#0a1d15cc 52%,#07140f 72%),linear-gradient(90deg,#07140f 30%,#07140fcc 50%,#0000 75%)}
 .cover .content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column}
@@ -132,13 +132,22 @@ body.overview .sheet-label{display:block}
 .brand-page.nmc .est{background:#fff;color:var(--di-deep);box-shadow:0 0 0 1px #cb892a33;left:auto;right:46px}
 .brand-page .logo-main{position:relative;z-index:2}
 .brand-page.di .logo-main img{width:330px}
+.nmc-logo{display:inline-flex;flex-direction:column;line-height:1;color:var(--di-deep)}
+.nmc-logo b{font:700 21px/1 var(--display);letter-spacing:-.3px}
+.nmc-logo i{font:700 11px/1 var(--display);font-style:normal;letter-spacing:4.2px;margin-top:5px;background:var(--g-di);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nmc-logo.light{color:#fff}
+.brand-page .nmc-logo b{font-size:48px;letter-spacing:-1.2px}
+.brand-page .nmc-logo i{font-size:20px;letter-spacing:9px;margin-top:10px}
+.brandpill .nmc-logo b{font-size:15px}
+.brandpill .nmc-logo i{font-size:8px;letter-spacing:3px;margin-top:3px}
+.back .nmc-logo b{font-size:27px;letter-spacing:-.5px}
+.back .nmc-logo i{font-size:13px;letter-spacing:5.5px;margin-top:6px}
 .brand-page .rule{width:64px;height:3px;border-radius:3px;margin:34px auto 26px;position:relative;z-index:2}
 .brand-page.di .rule{background:var(--g-di)} .brand-page.nmc .rule{background:var(--g-di)}
 .brand-page p{text-wrap:balance;position:relative;z-index:2;font:400 21px/1.38 var(--display);max-width:520px;letter-spacing:-.2px}
 .brand-page.di p{color:var(--di-deep)} .brand-page.nmc p{color:var(--di-deep)}
 .brand-page .role{position:relative;z-index:2;margin-top:24px;font:800 10px/1 var(--body);letter-spacing:2.4px;text-transform:uppercase}
 .brand-page .role{color:var(--di-green)}
-.brand-page .nmc-name{font:700 46px/1.05 var(--display);letter-spacing:-1.2px;color:var(--di-deep)}
 
 /* ───────────── Services (3 & 4) ───────────── */
 .svc-l{display:flex;flex-direction:column;background:var(--paper)}
@@ -265,7 +274,9 @@ body.overview .sheet-label{display:block}
   .page{width:210mm;height:147.9mm;break-after:page;page-break-after:always;box-shadow:none!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   /* PDF engines leave hairline slivers beside background-clip:text — print solid brand colours instead */
-  .grad-di,.grad-nmc,.grad-both,.st .num,.tl .next b,.voice .qm,.highlight b,  .grad-di,.grad-nmc,.grad-both,.st .num,.tl .next b,.voice .qm,}
+  .grad-di,.grad-nmc,.grad-both,.st .num,.tl .next b,.voice .qm,.highlight b,.nmc-logo i{background:none!important;-webkit-text-fill-color:currentColor}
+  .grad-di,.grad-nmc,.grad-both,.st .num,.tl .next b,.voice .qm,.nmc-logo i{color:#E0A12C}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media (max-width:700px){
   .viewer-header .id span,.viewer-header .seg{display:none}
@@ -315,8 +326,7 @@ body.overview .sheet-label{display:block}
 <section class="sheet single" data-label="Front cover" aria-label="Front cover">
   <div class="blank"></div>
   <article class="page cover on-dark">
-    <img class="bg" src="assets/ai-cover.jpg" alt="">
-    <div class="shade"></div>
+    <div class="pattern di" style="opacity:.25"></div>
     <div class="content">
       <div class="top">Discover Islam <i></i> New Muslim Centre</div>
       <h1>A Wholistic<br><span class="grad-both">Da’wa Cycle.</span></h1>
@@ -324,6 +334,8 @@ body.overview .sheet-label{display:block}
       <p class="tag">From understanding Islam to belonging for life.</p>
       <div class="brands">
         <img src="assets/di-logo.png" alt="Discover Islam">
+        <span class="sep"></span>
+        <div class="nmc-logo light"><b>New Muslim</b><i>CENTRE</i></div>
       </div>
     </div>
   </article>
@@ -379,7 +391,7 @@ body.overview .sheet-label{display:block}
   <article class="page brand-page nmc right">
     <div class="pattern nmc"></div>
     <span class="est">Est. 2022</span>
-    <h2 class="logo-main nmc-name">New Muslim Centre</h2>
+    <div class="logo-main"><div class="nmc-logo"><b>New Muslim</b><i>CENTRE</i></div></div>
     <div class="rule"></div>
     <p>Working towards an ecosystem of care and development for new Muslims through a variety of solutions.</p>
     <div class="role">Care &amp; development</div>
@@ -605,6 +617,7 @@ body.overview .sheet-label{display:block}
   </article>
   <article class="page prog on-dark right">
     <div class="bgw"><img src="assets/ai-wellbeing.jpg" alt="Men sharing tea at a well-being hub"></div>
+    <div class="brandpill"><div class="nmc-logo"><b>New Muslim</b><i>CENTRE</i></div></div>
     <div class="inner">
       <div class="voice">
         <span class="lbl">Community voice</span>
@@ -636,6 +649,7 @@ body.overview .sheet-label{display:block}
   </article>
   <article class="page prog on-dark right">
     <div class="bgw"><img src="assets/ai-umrah.jpg" alt="Pilgrims in ihram at the Prophet’s Mosque in Madinah"></div>
+    <div class="brandpill"><div class="nmc-logo"><b>New Muslim</b><i>CENTRE</i></div></div>
     <div class="inner">
       <div class="voice">
         <span class="lbl">Community voice</span>
@@ -682,6 +696,8 @@ body.overview .sheet-label{display:block}
     <div class="pattern di" style="opacity:.25"></div>
     <div class="marks" style="position:relative">
       <img src="assets/di-logo.png" alt="Discover Islam">
+      <span class="sep"></span>
+      <div class="nmc-logo light"><b>New Muslim</b><i>CENTRE</i></div>
     </div>
     <h2 style="position:relative">A Wholistic Da’wa Cycle.</h2>
     <div class="rule"></div>
