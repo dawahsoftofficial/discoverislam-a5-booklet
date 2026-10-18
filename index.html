@@ -89,19 +89,19 @@ body.overview .sheet-label{display:block}
 
 
 /* ───────────── Cover ───────────── */
-.cover{background:var(--paper);color:var(--ink);padding:46px 50px}
+.cover{background:linear-gradient(135deg,#0B2117 0%,#0A1D15 50%,#123326 100%);color:#fff;padding:46px 50px}
 .cover .bg{position:absolute;top:-6%;right:-26%;width:96%;height:112%;object-fit:cover;object-position:center}
 .cover .shade{position:absolute;inset:0;background:radial-gradient(120% 90% at 92% 50%,#0000 22%,#0a1d15cc 52%,#07140f 72%),linear-gradient(90deg,#07140f 30%,#07140fcc 50%,#0000 75%)}
 .cover .content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column}
-.cover .top{display:flex;align-items:center;gap:12px;font:800 10px/1 var(--body);letter-spacing:2.6px;text-transform:uppercase;color:var(--di-green-d)}
+.cover .top{display:flex;align-items:center;gap:12px;font:800 10px/1 var(--body);letter-spacing:2.6px;text-transform:uppercase;color:#ffffffb8}
 .cover .top i{width:5px;height:5px;border-radius:50%;background:var(--di-gold);display:inline-block}
 .cover h1{margin-top:auto;font:800 76px/.92 var(--display);letter-spacing:-2.2px}
-.cover h1 .grad-both{display:inline-block;padding-bottom:6px;background:linear-gradient(90deg,#D9A024,var(--di-gold) 55%,#B5761E);-webkit-background-clip:text;background-clip:text}
+.cover h1 .grad-both{display:inline-block;padding-bottom:6px}
 .cover .rule{width:120px;height:3px;border-radius:3px;background:var(--g-di);margin:26px 0 22px}
-.cover .tag{font:500 14px/1.5 var(--body);color:var(--muted);max-width:330px}
+.cover .tag{font:500 14px/1.5 var(--body);color:#ffffffc4;max-width:330px}
 .cover .brands{margin-top:auto;display:flex;align-items:center;gap:26px}
 .cover .brands img{height:40px}
-.cover .brands .sep{width:1px;height:34px;background:#0000001f}
+.cover .brands .sep{width:1px;height:34px;background:#ffffff33}
 
 /* ───────────── Foreword ───────────── */
 .fw{background:var(--paper)}
@@ -250,13 +250,13 @@ body.overview .sheet-label{display:block}
 .ways-cards div.c span{font:500 11px/1.35 var(--body);color:#ffffffbf}
 .ways-cards div.c b{display:block;font:700 16px/1.2 var(--display);color:#fff;margin-bottom:2px}
 .ways-cards div.c i svg{stroke:#08180F;stroke-width:2.4}
-.back{background:var(--paper);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.back{background:linear-gradient(135deg,#0B2117 0%,#0A1D15 50%,#123326 100%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .back .marks{display:flex;align-items:center;gap:30px}
 .back .marks img{height:56px}
-.back .marks .sep{width:1px;height:46px;background:#0000001f}
+.back .marks .sep{width:1px;height:46px;background:#ffffff33}
 .back h2{font:700 30px/1.1 var(--display);letter-spacing:-.6px;margin:34px 0 10px}
 .back .rule{width:70px;height:3px;border-radius:3px;background:var(--g-di);margin:0 auto 22px}
-.back .contact{font:500 11.5px/1.8 var(--body);color:var(--muted)}
+.back .contact{font:500 11.5px/1.8 var(--body);color:#ffffffb3}
 
 /* ───────────── Print ───────────── */
 @page{size:210mm 148mm;margin:0}
@@ -323,7 +323,8 @@ body.overview .sheet-label{display:block}
 <!-- ═════════ COVER ═════════ -->
 <section class="sheet single" data-label="Front cover" aria-label="Front cover">
   <div class="blank"></div>
-  <article class="page cover">
+  <article class="page cover on-dark">
+    <div class="pattern di" style="opacity:.25"></div>
     <div class="content">
       <div class="top">Discover Islam <i></i> New Muslim Centre</div>
       <h1>A Wholistic<br><span class="grad-both">Da’wa Cycle.</span></h1>
@@ -332,7 +333,7 @@ body.overview .sheet-label{display:block}
       <div class="brands">
         <img src="assets/di-logo.png" alt="Discover Islam">
         <span class="sep"></span>
-        <div class="nmc-logo"><b>New Muslim</b><i>CENTRE</i></div>
+        <div class="nmc-logo light"><b>New Muslim</b><i>CENTRE</i></div>
       </div>
     </div>
   </article>
@@ -687,10 +688,11 @@ body.overview .sheet-label{display:block}
 <section class="sheet single" data-label="Back cover" aria-label="Back cover" hidden>
   <div class="blank"></div>
   <article class="page back">
+    <div class="pattern di" style="opacity:.25"></div>
     <div class="marks" style="position:relative">
       <img src="assets/di-logo.png" alt="Discover Islam">
       <span class="sep"></span>
-      <div class="nmc-logo"><b>New Muslim</b><i>CENTRE</i></div>
+      <div class="nmc-logo light"><b>New Muslim</b><i>CENTRE</i></div>
     </div>
     <h2 style="position:relative">A Wholistic Da’wa Cycle.</h2>
     <div class="rule"></div>
