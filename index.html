@@ -310,33 +310,49 @@ body.rtl .dots{flex-direction:row-reverse}
 .arp.photo .ar-stat .num{background:linear-gradient(90deg,#F7CC5A,var(--di-gold-hi) 45%,#E09B34);-webkit-background-clip:text;background-clip:text}
 .arp.photo .ar-stat span{color:#ffffffd1}
 .arp .ar-stats.one .ar-stat{background:none;border:0;border-right:3px solid var(--di-gold);border-radius:0;padding:4px 18px 4px 0;text-align:right}
-/* Page 10: dark page with cards beside a UK network map */
+/* Pages 2–3: intro centred on page 2, its two cards spread down page 3 */
+.arp.ar-p2 .ar-h,.arp.ar-p2 .ar-note{margin-top:auto}
+.arp.ar-p3 .ar-cards{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;width:470px;margin:0 auto}
+.arp.ar-p3 .ar-card{padding:26px 30px}
+.arp.ar-p3 .ar-card h3{font-size:19px;margin-bottom:8px}
+.arp.ar-p3 .ar-card p{font-size:14px}
+/* Page 4: six services, icon beside the title to keep two rows compact */
+.arp.ar-p4 .ar-card{display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:center;padding:14px 16px}
+.arp.ar-p4 .ar-card .ib{width:36px;height:36px;margin:0}
+.arp.ar-p4 .ar-card h3{font-size:15.5px;margin:0}
+.arp.ar-p4 .ar-card p{grid-column:1/-1;margin-top:8px;font-size:12.5px;line-height:1.75}
+/* Pages 12–13: one dark page across the spread, text and cards beside a UK network map */
 .arp.ardark{background:linear-gradient(135deg,#0B2117 0%,#0A1D15 50%,#123326 100%);color:#fff}
 .ardark>*:not(.pattern):not(.page-foot){position:relative}
 .ardark .ar-h{color:#fff}
 .ardark .ar-lede{color:#ffffffd9;max-width:none}
 .ardark .ar-note{color:#fff}
-.ar-reach{display:grid;grid-template-columns:1fr 160px;gap:34px;align-items:center;margin:auto 0}
-.ardark .ar-reach .ar-cards{gap:10px}
-.ardark .ar-reach .ar-card{background:#ffffff0a;border-color:#ffffff1f;padding:12px 18px}
-.ardark .ar-reach .ar-card h3{font-size:15.5px;color:var(--di-gold-hi);margin-bottom:2px}
-.ardark .ar-reach .ar-card p{font-size:12.5px;color:#ffffffd1}
+.sheet .page.ar-wide{grid-column:1/-1;width:calc(var(--pw)*2);display:grid;grid-template-columns:1fr 1fr;column-gap:110px;align-items:center}
+.ar-wide .ar-text{align-self:stretch;display:flex;flex-direction:column}
+.ar-wide .ar-h{font-size:38px}
+.ardark.ar-wide .ar-cards{margin:20px 0 0;gap:10px}
+.ardark.ar-wide .ar-card{background:#ffffff0a;border-color:#ffffff1f;padding:14px 20px}
+.ardark.ar-wide .ar-card h3{font-size:16px;color:var(--di-gold-hi);margin-bottom:2px}
+.ardark.ar-wide .ar-card p{font-size:13px;color:#ffffffd1}
+.ar-wide .ar-note{margin-top:auto}
 .ar-map{margin:0;text-align:center}
-.ar-map svg{display:block;height:230px;width:auto;margin:0 auto}
+.ar-map svg{display:block;height:370px;width:auto;margin:0 auto}
 .ar-map .land{fill:#123326;stroke:var(--di-gold);stroke-width:1.3;stroke-linejoin:round}
 .ar-map .links{stroke:var(--di-gold-hi);stroke-opacity:.6;stroke-width:1.1}
 .ar-map .nodes{fill:var(--di-gold-hi);stroke:#0A1D15;stroke-width:1.2}
 .ar-map figcaption{font:500 11px/1.6 var(--body);color:#ffffff99;margin-top:8px}
 .arcover,.arback{background:linear-gradient(135deg,#0B2117 0%,#0A1D15 50%,#123326 100%);color:#fff;display:flex;flex-direction:column;padding:46px 50px 40px}
 .arcover>*:not(.pattern),.arback>*:not(.pattern):not(.page-foot){position:relative}
-.arcover .logo img{height:44px;display:block}
-.arcover h1{font:700 52px/1.3 var(--display);margin-top:auto}
+.arcover h1{font:700 66px/1.35 var(--display);margin:auto 0}
+.arcover .marks{display:flex;align-items:center;gap:26px}
+.arcover .marks img{height:46px}
+.arcover .marks .sep{width:1px;height:40px;background:#ffffff33}
+.arcover .nmc-logo b{font-size:24px}
+.arcover .nmc-logo i{font-size:11.5px;margin-top:5px}
 .arcover h1 span{color:var(--di-gold-hi)}
-.arcover .sub{font:400 15px/1.8 var(--body);color:#ffffffcc;margin-top:12px;max-width:620px}
 .ar-glass{border-right:3px solid var(--di-gold);padding:4px 18px 4px 0;margin-top:24px}
 .ar-glass h3{font:700 16px/1.4 var(--display);color:var(--di-gold-hi);margin-bottom:4px}
 .ar-glass p{font:400 12.5px/1.8 var(--body);color:#ffffffcc}
-.arcover .foot{margin-top:auto;font:500 11.5px/1.6 var(--body);color:#ffffff99}
 .arback h2{font:700 32px/1.45 var(--display);margin-top:16px}
 .arback .ar-lede{color:#ffffffcc;margin-top:8px}
 .arback .ar-glass .line{display:block;direction:ltr;unicode-bidi:isolate;text-align:right;font:500 12.5px/1.9 "Mulish",sans-serif;color:#fff}
@@ -344,10 +360,10 @@ body.rtl .dots{flex-direction:row-reverse}
 .arback .bottom{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
 .arback .bottom img{height:40px}
 /* Outside back cover reuses the English .back layout; keep the Latin wordmark in Outfit */
-#book-ar .back h2{line-height:1.5}
-#book-ar .back .nmc-logo b,#book-ar .back .nmc-logo i{font-family:"Outfit",sans-serif}
-#book-ar .back .nmc-logo b{letter-spacing:-.5px!important}
-#book-ar .back .nmc-logo i{letter-spacing:5.5px!important}
+#book-ar .back .contact{margin-top:28px}
+#book-ar .nmc-logo b,#book-ar .nmc-logo i{font-family:"Outfit",sans-serif}
+#book-ar .nmc-logo b{letter-spacing:-.5px!important}
+#book-ar .arcover .nmc-logo i{letter-spacing:4.6px!important}
 .arback .bottom span{font:500 11px/1.4 "Mulish",sans-serif;color:#ffffffaa}
 
 /* ───────────── Print ───────────── */
@@ -804,41 +820,41 @@ body.rtl .dots{flex-direction:row-reverse}
   <div class="blank"></div>
   <article class="page arcover on-dark">
     <div class="pattern di" style="opacity:.25"></div>
-    <div class="logo"><img src="assets/di-logo.png" alt="Discover Islam"></div>
     <h1>من التعريف بالإسلام<br><span>إلى دعم المسلم الجديد</span></h1>
-    <p class="sub">مسارات متكاملة للتعريف بالإسلام، وتقديم الموارد التعليمية، ومساندة المسلم الجديد في بداية رحلته.</p>
-    <div class="ar-glass"><h3 class="ltr">Discover Islam</h3><p>التعريف بالإسلام والتعليم والتواصل المجتمعي</p></div>
-    <p class="foot">كتيّب تعريفي للمؤسسات والشركاء المحتملين</p>
+    <div class="marks"><img src="assets/di-logo.png" alt="Discover Islam"><span class="sep"></span><div class="nmc-logo light"><b>New Muslim</b><i>CENTRE</i></div></div>
   </article>
 </section>
 
 <!-- pages 2–3 -->
 <section class="sheet spread" data-label="الصفحتان 2–3 · من نحن" hidden>
-  <article class="page arp right">
+  <article class="page arp ar-p2 right">
     <span class="eyebrow">من نحن</span>
     <h2 class="ar-h">رسالة واحدة، ومسارات متكاملة</h2>
     <p class="ar-lede">نعمل على تقديم الإسلام بصورة واضحة وأصيلة، وتوفير الموارد والخدمات التي تساعد المساجد والمدارس والمجتمعات على التعلّم والتواصل.</p>
-    <div class="ar-cards c2">
-      <div class="ar-card"><h3>مركز المسلم الجديد</h3><p>الترحيب بالمسلم الجديد، وتوفير الموارد والخدمات التي تدعمه في بداية رحلته، مع تطوير مسارات للتوجيه والإرشاد.</p></div>
-      <div class="ar-card"><h3 class="ltr">Discover Islam</h3><p>التعريف بالإسلام من خلال الزيارات المدرسية، والمعارض، والمطبوعات، والموارد التعليمية، والأنشطة التوعوية.</p></div>
-    </div>
     <p class="ar-note">تتكامل هذه المسارات لتصل المعرفة إلى الناس، وتوفّر دعمًا عمليًا لمن يبدأ رحلته مع الإسلام.</p>
     <div class="page-foot"><b>2</b></div>
   </article>
-  <article class="page arp" aria-label="صفحة فارغة"></article>
+  <article class="page arp ar-p3">
+    <div class="ar-cards">
+      <div class="ar-card"><h3 class="ltr">Discover Islam</h3><p>التعريف بالإسلام من خلال الزيارات المدرسية، والمعارض، والمطبوعات، والموارد التعليمية، والأنشطة التوعوية.</p></div>
+      <div class="ar-card"><h3>مركز المسلم الجديد</h3><p>الترحيب بالمسلم الجديد، وتوفير الموارد والخدمات التي تدعمه في بداية رحلته، مع تطوير مسارات للتوجيه والإرشاد.</p></div>
+    </div>
+    <div class="page-foot"><b>3</b></div>
+  </article>
 </section>
 
 <!-- pages 4–5 -->
 <section class="sheet spread" data-label="الصفحتان 4–5 · الخدمات وأثرنا بالأرقام" hidden>
-  <article class="page arp right">
+  <article class="page arp ar-p4 right">
     <span class="eyebrow">خدمات <span class="ltr">Discover Islam</span></span>
     <h2 class="ar-h">تعريف وتعليم وتواصل</h2>
     <div class="ar-cards wrap">
       <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-school"/></svg></div><h3>الزيارات المدرسية</h3><p>تقديم محتوى تعليمي يساعد الطلاب على فهم الإسلام.</p></div>
       <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-exhibit"/></svg></div><h3>المعارض والأيام المفتوحة</h3><p>مساحات للحوار والتعرّف المباشر والتواصل مع المجتمع.</p></div>
       <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-book"/></svg></div><h3>المطبوعات والموارد</h3><p>كتيبات ومواد تعريفية سهلة الاستخدام والتوزيع.</p></div>
-      <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-mic"/></svg></div><h3>المتحدثون والتدريب</h3><p>دعم المؤسسات والمتطوعين بالمعرفة والموارد المناسبة.</p></div>
-      <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-phone"/></svg></div><h3>المطويات الصوتية</h3><p>موارد صوتية يمكن الوصول إليها عبر رمز <span class="ltr">QR</span>.</p></div>
+      <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-gift"/></svg></div><h3>هدية المسلم الجديد</h3><p>حزمة ترحيبية تضم القرآن الكريم ومواد تعليمية وإرشادية تساعد المسلم الجديد في بداية رحلته مع الإسلام.</p></div>
+      <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-home"/></svg></div><h3>مركز المسلم الجديد</h3><p>توفير الموارد والخدمات التي تساعد المسلمين الجدد على التعلّم، والحصول على التوجيه والإرشاد، والتواصل مع المساجد والمجتمع.</p></div>
+      <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-heart"/></svg></div><h3>دعم ورعاية المسلمين الجدد</h3><p>تطوير مبادرات تساعد المسلمين الجدد على مواصلة التعلّم، وتعزيز ارتباطهم بالمجتمع الإسلامي، والوصول إلى الدعم المناسب.</p></div>
     </div>
     <div class="page-foot"><b>4</b></div>
   </article>
@@ -943,36 +959,22 @@ body.rtl .dots{flex-direction:row-reverse}
 </section>
 
 <!-- pages 12–13 -->
-<section class="sheet spread" data-label="الصفحتان 12–13 · رؤيتنا وأثرنا والتواصل والشراكة" hidden>
-  <article class="page arp ardark on-dark right">
+<section class="sheet spread" data-label="الصفحتان 12–13 · رؤيتنا وأثرنا" hidden>
+  <article class="page arp ardark on-dark ar-wide">
     <div class="pattern di" style="opacity:.25"></div>
-    <span class="eyebrow">رؤيتنا وأثرنا</span>
-    <h2 class="ar-h">تمكين المراكز، وتوسيع الأثر</h2>
-    <p class="ar-lede">نعمل على تمكين المساجد والمراكز والمؤسسات في أنحاء بريطانيا بالمعرفة والموارد والبرامج التي تساعدها على التعريف بالإسلام، وتصحيح المفاهيم الخاطئة عنه، ودعم المسلمين الجدد.</p>
-    <div class="ar-reach">
+    <div class="ar-text">
+      <span class="eyebrow">رؤيتنا وأثرنا</span>
+      <h2 class="ar-h">تمكين المراكز، وتوسيع الأثر</h2>
+      <p class="ar-lede">نعمل على تمكين المساجد والمراكز والمؤسسات في أنحاء بريطانيا بالمعرفة والموارد والبرامج التي تساعدها على التعريف بالإسلام، وتصحيح المفاهيم الخاطئة عنه، ودعم المسلمين الجدد.</p>
       <div class="ar-cards">
         <div class="ar-card"><h3>تمكين المراكز في التعريف بالإسلام</h3><p>مواد تعليمية ومطبوعات وبرامج تساعد على تقديم صورة واضحة وأصيلة عن الإسلام.</p></div>
         <div class="ar-card"><h3>دعم المسلمين الجدد</h3><p>موارد أساسية ومسارات للتوجيه والإرشاد، بالتعاون مع المراكز والمساجد.</p></div>
         <div class="ar-card"><h3>بناء شبكة من الشراكات</h3><p>تعاون وتبادل خبرات مع المساجد والمراكز والمؤسسات لتوسيع نطاق الوصول والأثر.</p></div>
       </div>
-      <figure class="ar-map"><svg viewBox="-6 -6 192 297.8" role="img" aria-label="خريطة المملكة المتحدة وشبكة الشراكات"><path class="land" d="M99.6 235.7L98.3 237.0L94.0 238.3L88.3 243.0L83.4 242.2L77.4 236.7L71.1 237.4L73.8 234.5L70.4 233.8L68.4 232.0L64.5 232.1L59.0 235.6L55.0 233.1L53.6 228.2L52.5 227.6L55.6 224.0L68.4 217.7L72.7 213.7L75.8 206.9L74.5 206.4L74.0 204.8L74.7 201.8L73.3 198.2L73.6 195.2L68.9 195.8L63.0 198.6L63.8 195.9L68.1 192.1L70.5 188.0L78.9 183.0L81.9 183.2L85.8 181.8L87.7 181.6L91.8 184.4L90.6 180.2L92.4 179.2L95.1 183.0L98.2 182.8L95.2 181.6L92.4 176.5L92.6 174.2L95.0 169.5L93.0 168.3L93.1 164.2L95.4 162.4L96.0 155.6L90.6 157.2L83.3 146.5L82.9 143.5L85.2 137.0L88.8 132.8L92.9 131.3L83.6 131.5L76.2 136.7L73.0 136.8L70.8 134.7L66.0 137.5L60.5 134.7L58.8 139.6L54.8 134.3L54.1 130.3L55.1 129.5L56.2 130.2L63.1 114.2L62.2 111.1L59.2 108.0L59.5 102.5L60.4 100.7L64.8 100.5L60.1 96.9L60.9 93.6L58.6 97.6L55.5 98.9L53.1 102.1L53.2 96.4L57.2 91.2L50.2 97.9L49.6 99.3L50.2 105.7L47.1 117.7L45.5 119.6L43.2 118.5L44.8 110.3L48.0 104.7L45.9 104.4L46.1 96.8L47.5 90.7L50.1 82.4L53.8 74.8L45.3 81.9L41.5 80.9L40.2 79.5L39.6 76.9L36.6 76.0L38.4 74.6L41.3 74.1L44.0 71.8L41.5 70.2L43.8 68.4L46.4 64.0L47.0 59.9L45.3 56.7L42.8 55.3L42.3 53.5L43.4 51.6L46.6 50.0L44.9 49.3L43.7 47.1L44.6 42.8L46.2 39.6L50.9 39.7L51.9 38.8L54.4 39.6L49.7 33.7L51.1 28.4L57.1 27.6L55.7 25.0L56.0 19.6L58.6 17.4L60.7 17.9L62.4 19.9L66.5 18.1L67.5 19.8L88.9 15.5L92.6 16.0L91.6 23.1L89.7 25.8L75.6 37.2L74.8 40.5L78.0 41.6L74.0 46.0L73.0 49.1L75.7 49.0L86.3 45.0L88.2 44.9L92.9 46.1L110.4 45.2L112.5 46.0L114.2 48.0L115.8 52.3L111.4 59.1L107.1 71.5L102.7 78.6L99.4 82.4L92.8 84.5L88.0 87.1L95.7 86.1L100.0 88.6L99.6 90.6L97.9 92.2L94.0 92.5L90.4 96.0L87.1 97.6L79.3 95.6L82.5 98.0L92.8 100.0L96.6 97.7L100.9 97.7L109.1 101.6L118.1 112.0L122.3 129.0L125.8 139.1L136.0 145.4L141.5 152.5L146.7 157.5L144.4 160.5L150.3 173.5L146.9 172.4L143.3 169.4L136.2 169.8L142.9 170.8L150.5 177.9L153.1 182.0L154.7 187.5L153.6 190.0L149.0 195.5L153.3 198.5L155.2 198.0L158.4 193.6L167.4 193.8L173.3 195.9L178.4 200.2L179.4 202.6L180.0 209.1L176.6 221.1L172.1 225.2L170.6 224.8L171.4 228.7L169.8 230.0L168.2 230.6L165.6 229.9L161.9 232.3L164.5 233.6L165.1 234.9L164.4 237.3L155.9 240.6L157.8 240.0L159.1 240.5L160.7 243.1L164.4 243.9L174.0 243.8L173.6 249.5L167.2 253.7L165.7 257.5L162.2 257.3L160.7 258.7L151.9 262.6L144.5 261.0L133.9 262.6L122.4 258.4L123.9 260.8L120.6 263.1L114.2 264.1L111.2 263.8L112.5 266.9L111.2 267.6L105.5 266.5L104.0 267.7L97.7 264.4L93.6 264.1L86.3 266.7L84.8 269.4L83.0 276.4L81.2 279.0L79.2 279.4L71.9 274.2L62.2 277.4L57.1 281.5L55.1 285.3L53.1 285.8L51.4 283.9L49.3 283.2L45.9 284.9L45.3 282.4L46.8 280.3L51.0 278.8L57.1 271.0L59.1 269.8L64.8 262.2L65.9 255.9L70.0 254.3L72.0 249.3L78.3 248.0L91.1 248.7L104.0 232.0L99.6 235.7ZM71.9 182.4L74.5 182.9L73.9 184.2L68.6 188.3L67.8 186.9L66.8 187.0L65.4 184.3L65.1 180.4L67.0 179.4L69.7 179.4L71.9 182.4ZM92.6 3.6L92.4 4.4L96.9 5.1L97.9 5.9L97.4 7.5L96.1 7.9L93.7 6.4L89.9 6.9L89.2 4.5L87.6 5.4L87.3 2.5L88.0 0.4L89.1 0.0L92.7 1.4L93.3 2.7L92.6 3.6ZM55.3 115.8L53.0 115.8L51.2 114.8L50.1 110.5L51.4 107.6L52.7 107.4L54.3 108.9L55.3 111.9L55.3 115.8ZM43.1 87.7L35.8 89.5L33.3 89.3L33.6 87.9L35.6 87.4L36.5 83.2L33.4 81.2L33.8 79.4L37.1 78.3L40.0 81.8L43.4 83.2L43.1 87.7ZM36.7 100.7L38.0 108.1L37.4 109.3L33.5 110.9L33.8 105.6L30.1 108.0L30.6 104.5L32.2 102.5L33.3 103.0L36.7 100.7ZM39.6 104.3L38.3 104.6L37.7 101.9L40.6 99.3L39.6 98.8L40.2 97.1L44.0 94.8L39.6 104.3ZM35.4 24.5L33.1 29.9L29.0 33.0L31.7 33.5L31.3 35.2L21.6 43.7L20.6 43.4L19.3 41.7L23.4 38.2L19.8 35.7L21.1 34.3L19.2 32.9L19.3 30.1L20.6 28.7L22.9 30.1L25.8 29.9L24.9 26.4L34.7 20.1L35.4 24.5ZM36.4 51.3L36.6 57.3L37.8 58.3L45.0 59.3L44.5 61.0L40.0 65.8L38.8 65.5L38.4 60.9L36.1 61.5L33.1 60.9L31.0 56.9L26.7 55.8L25.2 53.3L26.2 51.7L27.3 52.1L28.4 51.3L27.8 49.6L32.2 48.3L32.5 46.3L34.5 46.8L36.0 48.8L36.4 51.3ZM17.1 45.8L19.1 47.5L17.5 50.5L15.0 50.5L11.5 48.4L12.2 46.7L15.9 46.6L17.1 45.8ZM16.3 63.6L13.9 63.1L13.4 55.3L16.0 55.5L16.3 63.6ZM35.0 158.4L27.2 159.4L26.9 155.4L24.4 154.5L22.0 149.5L19.9 148.4L17.2 151.8L18.0 153.7L14.9 157.0L9.8 156.7L8.5 155.3L5.3 154.4L4.7 152.3L0.0 147.0L1.8 145.1L7.1 142.6L4.3 139.3L7.4 138.9L10.8 137.1L14.0 129.0L16.8 127.0L17.6 128.1L19.0 128.4L21.8 124.1L26.3 123.8L30.4 122.3L36.7 123.0L41.4 132.5L44.2 135.6L44.3 137.5L41.2 139.7L41.3 141.1L43.8 140.1L46.6 140.4L48.7 145.5L48.4 147.4L45.0 144.0L45.3 149.3L47.1 149.6L46.2 152.6L42.2 153.8L40.2 158.4L38.7 159.6L35.0 158.4ZM128.8 264.9L125.4 268.1L119.7 265.7L124.3 262.3L128.8 264.9Z"/><g class="links"><line x1="70.8" y1="102.8" x2="90.2" y2="100.0"/><line x1="70.8" y1="102.8" x2="40.3" y2="142.5"/><line x1="90.2" y1="100.0" x2="120.0" y2="167.4"/><line x1="70.8" y1="102.8" x2="107.4" y2="177.5"/><line x1="40.3" y1="142.5" x2="107.4" y2="177.5"/><line x1="107.4" y1="177.5" x2="120.0" y2="167.4"/><line x1="107.4" y1="177.5" x2="113.8" y2="208.6"/><line x1="120.0" y1="167.4" x2="113.8" y2="208.6"/><line x1="113.8" y1="208.6" x2="145.9" y2="239.3"/><line x1="113.8" y1="208.6" x2="90.4" y2="240.1"/><line x1="90.4" y1="240.1" x2="145.9" y2="239.3"/></g><g class="nodes"><circle cx="145.9" cy="239.3" r="3.4"/><circle cx="113.8" cy="208.6" r="3.4"/><circle cx="107.4" cy="177.5" r="3.4"/><circle cx="120.0" cy="167.4" r="3.4"/><circle cx="70.8" cy="102.8" r="3.4"/><circle cx="90.2" cy="100.0" r="3.4"/><circle cx="90.4" cy="240.1" r="3.4"/><circle cx="40.3" cy="142.5" r="3.4"/></g></svg><figcaption>تصوّر لشبكة وطنية من الشراكات</figcaption></figure>
+      <p class="ar-note">رسالتنا تتجاوز الوصول إلى الأفراد؛ فنحن نعمل على تمكين المراكز لتوسيع أثرها في أنحاء بريطانيا.</p>
     </div>
-    <p class="ar-note">رسالتنا تتجاوز الوصول إلى الأفراد؛ فنحن نعمل على تمكين المراكز لتوسيع أثرها في أنحاء بريطانيا.</p>
-    <div class="page-foot"><b>12</b></div>
-  </article>
-  <article class="page arback on-dark">
-    <div class="pattern di" style="opacity:.25"></div>
-    <span class="eyebrow">للتواصل والشراكة</span>
-    <h2>معاً لتعريف أوسع بالإسلام<br>ودعم أفضل للمسلم الجديد</h2>
-    <p class="ar-lede">نسعى إلى بناء شراكات مثمرة مع المساجد والمدارس والمؤسسات المجتمعية، لتوسيع أثرنا وتقديم خدمات متكاملة تخدم المجتمع.</p>
-    <div class="ar-glass">
-      <h3>للتواصل والشراكة</h3>
-      <span class="line">info@discoverislam.co.uk</span>
-      <span class="line">discoverislam.co.uk</span>
-      <span class="line">7 Bridges Place, Parsons Green, London SW6 4HW</span>
-    </div>
-    <div class="bottom"><img src="assets/di-logo.png" alt="Discover Islam"><span class="ltr">Registered Charity No. 1146212</span></div>
-    <div class="page-foot"><b>13</b></div>
+    <figure class="ar-map"><svg viewBox="-6 -6 192 297.8" role="img" aria-label="خريطة المملكة المتحدة وشبكة الشراكات"><path class="land" d="M99.6 235.7L98.3 237.0L94.0 238.3L88.3 243.0L83.4 242.2L77.4 236.7L71.1 237.4L73.8 234.5L70.4 233.8L68.4 232.0L64.5 232.1L59.0 235.6L55.0 233.1L53.6 228.2L52.5 227.6L55.6 224.0L68.4 217.7L72.7 213.7L75.8 206.9L74.5 206.4L74.0 204.8L74.7 201.8L73.3 198.2L73.6 195.2L68.9 195.8L63.0 198.6L63.8 195.9L68.1 192.1L70.5 188.0L78.9 183.0L81.9 183.2L85.8 181.8L87.7 181.6L91.8 184.4L90.6 180.2L92.4 179.2L95.1 183.0L98.2 182.8L95.2 181.6L92.4 176.5L92.6 174.2L95.0 169.5L93.0 168.3L93.1 164.2L95.4 162.4L96.0 155.6L90.6 157.2L83.3 146.5L82.9 143.5L85.2 137.0L88.8 132.8L92.9 131.3L83.6 131.5L76.2 136.7L73.0 136.8L70.8 134.7L66.0 137.5L60.5 134.7L58.8 139.6L54.8 134.3L54.1 130.3L55.1 129.5L56.2 130.2L63.1 114.2L62.2 111.1L59.2 108.0L59.5 102.5L60.4 100.7L64.8 100.5L60.1 96.9L60.9 93.6L58.6 97.6L55.5 98.9L53.1 102.1L53.2 96.4L57.2 91.2L50.2 97.9L49.6 99.3L50.2 105.7L47.1 117.7L45.5 119.6L43.2 118.5L44.8 110.3L48.0 104.7L45.9 104.4L46.1 96.8L47.5 90.7L50.1 82.4L53.8 74.8L45.3 81.9L41.5 80.9L40.2 79.5L39.6 76.9L36.6 76.0L38.4 74.6L41.3 74.1L44.0 71.8L41.5 70.2L43.8 68.4L46.4 64.0L47.0 59.9L45.3 56.7L42.8 55.3L42.3 53.5L43.4 51.6L46.6 50.0L44.9 49.3L43.7 47.1L44.6 42.8L46.2 39.6L50.9 39.7L51.9 38.8L54.4 39.6L49.7 33.7L51.1 28.4L57.1 27.6L55.7 25.0L56.0 19.6L58.6 17.4L60.7 17.9L62.4 19.9L66.5 18.1L67.5 19.8L88.9 15.5L92.6 16.0L91.6 23.1L89.7 25.8L75.6 37.2L74.8 40.5L78.0 41.6L74.0 46.0L73.0 49.1L75.7 49.0L86.3 45.0L88.2 44.9L92.9 46.1L110.4 45.2L112.5 46.0L114.2 48.0L115.8 52.3L111.4 59.1L107.1 71.5L102.7 78.6L99.4 82.4L92.8 84.5L88.0 87.1L95.7 86.1L100.0 88.6L99.6 90.6L97.9 92.2L94.0 92.5L90.4 96.0L87.1 97.6L79.3 95.6L82.5 98.0L92.8 100.0L96.6 97.7L100.9 97.7L109.1 101.6L118.1 112.0L122.3 129.0L125.8 139.1L136.0 145.4L141.5 152.5L146.7 157.5L144.4 160.5L150.3 173.5L146.9 172.4L143.3 169.4L136.2 169.8L142.9 170.8L150.5 177.9L153.1 182.0L154.7 187.5L153.6 190.0L149.0 195.5L153.3 198.5L155.2 198.0L158.4 193.6L167.4 193.8L173.3 195.9L178.4 200.2L179.4 202.6L180.0 209.1L176.6 221.1L172.1 225.2L170.6 224.8L171.4 228.7L169.8 230.0L168.2 230.6L165.6 229.9L161.9 232.3L164.5 233.6L165.1 234.9L164.4 237.3L155.9 240.6L157.8 240.0L159.1 240.5L160.7 243.1L164.4 243.9L174.0 243.8L173.6 249.5L167.2 253.7L165.7 257.5L162.2 257.3L160.7 258.7L151.9 262.6L144.5 261.0L133.9 262.6L122.4 258.4L123.9 260.8L120.6 263.1L114.2 264.1L111.2 263.8L112.5 266.9L111.2 267.6L105.5 266.5L104.0 267.7L97.7 264.4L93.6 264.1L86.3 266.7L84.8 269.4L83.0 276.4L81.2 279.0L79.2 279.4L71.9 274.2L62.2 277.4L57.1 281.5L55.1 285.3L53.1 285.8L51.4 283.9L49.3 283.2L45.9 284.9L45.3 282.4L46.8 280.3L51.0 278.8L57.1 271.0L59.1 269.8L64.8 262.2L65.9 255.9L70.0 254.3L72.0 249.3L78.3 248.0L91.1 248.7L104.0 232.0L99.6 235.7ZM71.9 182.4L74.5 182.9L73.9 184.2L68.6 188.3L67.8 186.9L66.8 187.0L65.4 184.3L65.1 180.4L67.0 179.4L69.7 179.4L71.9 182.4ZM92.6 3.6L92.4 4.4L96.9 5.1L97.9 5.9L97.4 7.5L96.1 7.9L93.7 6.4L89.9 6.9L89.2 4.5L87.6 5.4L87.3 2.5L88.0 0.4L89.1 0.0L92.7 1.4L93.3 2.7L92.6 3.6ZM55.3 115.8L53.0 115.8L51.2 114.8L50.1 110.5L51.4 107.6L52.7 107.4L54.3 108.9L55.3 111.9L55.3 115.8ZM43.1 87.7L35.8 89.5L33.3 89.3L33.6 87.9L35.6 87.4L36.5 83.2L33.4 81.2L33.8 79.4L37.1 78.3L40.0 81.8L43.4 83.2L43.1 87.7ZM36.7 100.7L38.0 108.1L37.4 109.3L33.5 110.9L33.8 105.6L30.1 108.0L30.6 104.5L32.2 102.5L33.3 103.0L36.7 100.7ZM39.6 104.3L38.3 104.6L37.7 101.9L40.6 99.3L39.6 98.8L40.2 97.1L44.0 94.8L39.6 104.3ZM35.4 24.5L33.1 29.9L29.0 33.0L31.7 33.5L31.3 35.2L21.6 43.7L20.6 43.4L19.3 41.7L23.4 38.2L19.8 35.7L21.1 34.3L19.2 32.9L19.3 30.1L20.6 28.7L22.9 30.1L25.8 29.9L24.9 26.4L34.7 20.1L35.4 24.5ZM36.4 51.3L36.6 57.3L37.8 58.3L45.0 59.3L44.5 61.0L40.0 65.8L38.8 65.5L38.4 60.9L36.1 61.5L33.1 60.9L31.0 56.9L26.7 55.8L25.2 53.3L26.2 51.7L27.3 52.1L28.4 51.3L27.8 49.6L32.2 48.3L32.5 46.3L34.5 46.8L36.0 48.8L36.4 51.3ZM17.1 45.8L19.1 47.5L17.5 50.5L15.0 50.5L11.5 48.4L12.2 46.7L15.9 46.6L17.1 45.8ZM16.3 63.6L13.9 63.1L13.4 55.3L16.0 55.5L16.3 63.6ZM35.0 158.4L27.2 159.4L26.9 155.4L24.4 154.5L22.0 149.5L19.9 148.4L17.2 151.8L18.0 153.7L14.9 157.0L9.8 156.7L8.5 155.3L5.3 154.4L4.7 152.3L0.0 147.0L1.8 145.1L7.1 142.6L4.3 139.3L7.4 138.9L10.8 137.1L14.0 129.0L16.8 127.0L17.6 128.1L19.0 128.4L21.8 124.1L26.3 123.8L30.4 122.3L36.7 123.0L41.4 132.5L44.2 135.6L44.3 137.5L41.2 139.7L41.3 141.1L43.8 140.1L46.6 140.4L48.7 145.5L48.4 147.4L45.0 144.0L45.3 149.3L47.1 149.6L46.2 152.6L42.2 153.8L40.2 158.4L38.7 159.6L35.0 158.4ZM128.8 264.9L125.4 268.1L119.7 265.7L124.3 262.3L128.8 264.9Z"/><g class="links"><line x1="70.8" y1="102.8" x2="90.2" y2="100.0"/><line x1="70.8" y1="102.8" x2="40.3" y2="142.5"/><line x1="90.2" y1="100.0" x2="120.0" y2="167.4"/><line x1="70.8" y1="102.8" x2="107.4" y2="177.5"/><line x1="40.3" y1="142.5" x2="107.4" y2="177.5"/><line x1="107.4" y1="177.5" x2="120.0" y2="167.4"/><line x1="107.4" y1="177.5" x2="113.8" y2="208.6"/><line x1="120.0" y1="167.4" x2="113.8" y2="208.6"/><line x1="113.8" y1="208.6" x2="145.9" y2="239.3"/><line x1="113.8" y1="208.6" x2="90.4" y2="240.1"/><line x1="90.4" y1="240.1" x2="145.9" y2="239.3"/></g><g class="nodes"><circle cx="145.9" cy="239.3" r="3.4"/><circle cx="113.8" cy="208.6" r="3.4"/><circle cx="107.4" cy="177.5" r="3.4"/><circle cx="120.0" cy="167.4" r="3.4"/><circle cx="70.8" cy="102.8" r="3.4"/><circle cx="90.2" cy="100.0" r="3.4"/><circle cx="90.4" cy="240.1" r="3.4"/><circle cx="40.3" cy="142.5" r="3.4"/></g></svg><figcaption>تصوّر لشبكة وطنية من الشراكات</figcaption></figure>
+    <div class="page-foot"><b>13</b><b>12</b></div>
   </article>
 </section>
 
@@ -980,14 +982,8 @@ body.rtl .dots{flex-direction:row-reverse}
 <section class="sheet single" data-label="الغلاف الخلفي" hidden>
   <article class="page back">
     <div class="pattern di" style="opacity:.25"></div>
-    <div class="marks" style="position:relative">
-      <img src="assets/di-logo.png" alt="Discover Islam">
-      <span class="sep"></span>
-      <div class="nmc-logo light"><b>New Muslim</b><i>CENTRE</i></div>
-    </div>
-    <h2 style="position:relative">من التعريف بالإسلام إلى دعم المسلم الجديد</h2>
-    <div class="rule"></div>
-    <p class="contact" dir="ltr" style="position:relative">discoverislam.co.uk<br>Registered Charity No. 1146212</p>
+    <div class="marks" style="position:relative"><img src="assets/di-logo.png" alt="Discover Islam"></div>
+    <p class="contact" dir="ltr" style="position:relative">7 Bridges Place, Parsons Green, London SW6 4HW<br>discoverislam.co.uk<br>Registered Charity No. 1146212</p>
   </article>
   <div class="blank"></div>
 </section>
