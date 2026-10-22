@@ -264,8 +264,8 @@ html[lang=ar]{--display:"IBM Plex Sans Arabic","Outfit",system-ui,sans-serif;--b
 #book-ar .page-foot{direction:ltr}
 #book-ar .page *{letter-spacing:0!important}
 #book-ar .eyebrow::after{left:auto;right:0}
-#book-ar .ltr{direction:ltr;unicode-bidi:isolate}
-#book-ar .num{font-family:"Outfit",sans-serif;direction:ltr;unicode-bidi:isolate}
+#book-ar .ltr{direction:ltr;unicode-bidi:isolate;text-align:right}
+#book-ar .num{font-family:var(--display)}
 body.rtl #prev{left:auto;right:16px} body.rtl #next{right:auto;left:16px}
 body.rtl .dots{flex-direction:row-reverse}
 .arp{background:var(--paper);display:flex;flex-direction:column}
@@ -281,7 +281,7 @@ body.rtl .dots{flex-direction:row-reverse}
 .ar-card p{font:400 12px/1.8 var(--body);color:#41443f}
 .ar-card .ib{width:42px;height:42px;border-radius:12px;background:#CB892A14;display:grid;place-items:center;margin-bottom:10px}
 .ar-card .ib .ico{width:24px;height:24px}
-.ar-card .stepn{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--g-di);color:#08180F;font:800 14px/1 "Outfit",sans-serif;margin-bottom:10px}
+.ar-card .stepn{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--g-di);color:#08180F;font:700 14px/1 var(--display);margin-bottom:10px}
 .ar-note{margin-top:16px;font:500 13px/1.8 var(--body);color:var(--di-green-d);border-right:3px solid var(--di-gold);padding-right:12px}
 .ar-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:auto}
 .ar-stats.one{grid-template-columns:minmax(0,300px);margin-top:18px}
@@ -294,7 +294,7 @@ body.rtl .dots{flex-direction:row-reverse}
 .arp:not(.photo) .ar-card h3{font-size:17px}
 .arp:not(.photo) .ar-card p{font-size:13px}
 .arp:not(.photo) .ar-stat{padding:24px 14px}
-.arp:not(.photo) .ar-stat .num{font-size:44px}
+.arp:not(.photo) .ar-stat .num{font-size:32px}
 .arp:not(.photo) .ar-stat span{font-size:13px}
 .arp.photo{background:var(--di-deep);color:#fff;padding:0}
 .arp.photo .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -310,20 +310,22 @@ body.rtl .dots{flex-direction:row-reverse}
 .arp.photo .ar-stat{background:#08180Fb3;border-color:#ffffff1f}
 .arp.photo .ar-stat .num{background:linear-gradient(90deg,#F7CC5A,var(--di-gold-hi) 45%,#E09B34);-webkit-background-clip:text;background-clip:text}
 .arp.photo .ar-stat span{color:#ffffffd1}
+.arp .ar-stats.one .ar-stat{background:none;border:0;border-right:3px solid var(--di-gold);border-radius:0;padding:4px 18px 4px 0;text-align:right}
 .arcover,.arback{background:linear-gradient(135deg,#0B2117 0%,#0A1D15 50%,#123326 100%);color:#fff;display:flex;flex-direction:column;padding:46px 50px 40px}
 .arcover>*:not(.pattern),.arback>*:not(.pattern){position:relative}
 .arcover .logo img{height:44px;display:block}
 .arcover h1{font:700 52px/1.3 var(--display);margin-top:auto}
 .arcover h1 span{color:var(--di-gold-hi)}
 .arcover .sub{font:400 15px/1.8 var(--body);color:#ffffffcc;margin-top:12px;max-width:620px}
-.ar-glass{background:#ffffff0f;border:1px solid #ffffff24;border-radius:14px;padding:16px 20px;margin-top:24px}
+.ar-glass{border-right:3px solid var(--di-gold);padding:4px 18px 4px 0;margin-top:24px}
 .ar-glass h3{font:700 16px/1.4 var(--display);color:var(--di-gold-hi);margin-bottom:4px}
 .ar-glass p{font:400 12.5px/1.8 var(--body);color:#ffffffcc}
 .arcover .foot{margin-top:auto;font:500 11.5px/1.6 var(--body);color:#ffffff99}
 .arback h2{font:700 32px/1.45 var(--display);margin-top:16px}
 .arback .ar-lede{color:#ffffffcc;margin-top:8px}
 .arback .ar-glass .line{display:block;direction:ltr;unicode-bidi:isolate;text-align:right;font:500 12.5px/1.9 "Mulish",sans-serif;color:#fff}
-.arback .bottom{margin-top:auto;display:flex;align-items:center;gap:16px}
+.arback .ar-glass{margin:auto 0}
+.arback .bottom{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
 .arback .bottom img{height:40px}
 .arback .bottom span{font:500 11px/1.4 "Mulish",sans-serif;color:#ffffffaa}
 
@@ -790,7 +792,7 @@ body.rtl .dots{flex-direction:row-reverse}
 </section>
 
 <!-- PDF pages 2–3 -->
-<section class="sheet spread" data-label="الصفحتان 2–3 · من نحن" hidden>
+<section class="sheet spread" data-label="الصفحتان ٢–٣ · من نحن" hidden>
   <article class="page arp right">
     <span class="eyebrow">من نحن</span>
     <h2 class="ar-h">رسالة واحدة، ومسارات متكاملة</h2>
@@ -800,26 +802,26 @@ body.rtl .dots{flex-direction:row-reverse}
       <div class="ar-card"><h3 class="ltr">Discover Islam</h3><p>التعريف بالإسلام من خلال الزيارات المدرسية، والمعارض، والمطبوعات، والموارد التعليمية، والمحاضرات.</p></div>
     </div>
     <p class="ar-note">تتكامل هذه المسارات لتصل المعرفة إلى الناس، وتوفر دعماً عملياً لمن يبدأ رحلته مع الإسلام.</p>
-    <div class="page-foot"><b>02</b></div>
+    <div class="page-foot"><b>٠٢</b></div>
   </article>
   <article class="page arp">
     <span class="eyebrow">أثرنا بالأرقام</span>
     <h2 class="ar-h">خبرة وأثر ممتدان</h2>
     <div class="ar-stats">
-      <div class="ar-stat"><b class="num">20+</b><span>عاماً من الخبرة</span></div>
-      <div class="ar-stat"><b class="num">2,000+</b><span>زيارة وعرض مدرسي</span></div>
-      <div class="ar-stat"><b class="num">100,000+</b><span>طالب ومعلّم تم الوصول إليهم</span></div>
-      <div class="ar-stat"><b class="num">1,000,000+</b><span>مادة تعريفية موزعة</span></div>
-      <div class="ar-stat"><b class="num">5,000+</b><span>مسلم جديد تمت مساندته</span></div>
-      <div class="ar-stat"><b class="num">100+</b><span>جهة شريكة ومعرض متنقل خلال مسيرة المؤسسة</span></div>
+      <div class="ar-stat"><b class="num">٢٠+</b><span>عاماً من الخبرة</span></div>
+      <div class="ar-stat"><b class="num">٢٬٠٠٠+</b><span>زيارة وعرض مدرسي</span></div>
+      <div class="ar-stat"><b class="num">١٠٠٬٠٠٠+</b><span>طالب ومعلّم تم الوصول إليهم</span></div>
+      <div class="ar-stat"><b class="num">١٬٠٠٠٬٠٠٠+</b><span>مادة تعريفية موزعة</span></div>
+      <div class="ar-stat"><b class="num">٥٬٠٠٠+</b><span>مسلم جديد تمت مساندته</span></div>
+      <div class="ar-stat"><b class="num">١٠٠+</b><span>جهة شريكة ومعرض متنقل خلال مسيرة المؤسسة</span></div>
     </div>
     <p class="ar-note">هذه الأرقام تعكس العمل المتراكم عبر مسيرة المؤسسة، وليست أرقاماً سنوية.</p>
-    <div class="page-foot"><b>03</b></div>
+    <div class="page-foot"><b>٠٣</b></div>
   </article>
 </section>
 
 <!-- PDF pages 4–5 -->
-<section class="sheet spread" data-label="الصفحتان 4–5 · الخدمات والزيارات المدرسية" hidden>
+<section class="sheet spread" data-label="الصفحتان ٤–٥ · الخدمات والزيارات المدرسية" hidden>
   <article class="page arp right">
     <span class="eyebrow">خدمات <span class="ltr">Discover Islam</span></span>
     <h2 class="ar-h">تعريف وتعليم وتواصل</h2>
@@ -830,7 +832,7 @@ body.rtl .dots{flex-direction:row-reverse}
       <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-mic"/></svg></div><h3>المتحدثون والتدريب</h3><p>دعم المؤسسات والمتطوعين بالمعرفة والموارد المناسبة.</p></div>
       <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-phone"/></svg></div><h3>المطويات الصوتية</h3><p>موارد يمكن الوصول إليها عبر رمز <span class="ltr">QR</span>.</p></div>
     </div>
-    <div class="page-foot"><b>04</b></div>
+    <div class="page-foot"><b>٠٤</b></div>
   </article>
   <article class="page arp photo on-dark di-theme">
     <img class="bg" src="assets/ai-schools.jpg" alt="" style="object-position:78% 40%">
@@ -845,12 +847,12 @@ body.rtl .dots{flex-direction:row-reverse}
       </div>
       <p class="ar-note">الهدف هو تعزيز المعرفة، وتشجيع الحوار البنّاء، ودعم التفاهم بين المجتمعات.</p>
     </div>
-    <div class="page-foot"><b>05</b></div>
+    <div class="page-foot"><b>٠٥</b></div>
   </article>
 </section>
 
 <!-- PDF pages 6–7 -->
-<section class="sheet spread" data-label="الصفحتان 6–7 · الموارد التعليمية وهدية المسلم الجديد" hidden>
+<section class="sheet spread" data-label="الصفحتان ٦–٧ · الموارد التعليمية وهدية المسلم الجديد" hidden>
   <article class="page arp photo on-dark di-theme right">
     <img class="bg" src="assets/literature-hero-bg.jpg" alt="" style="object-position:50% 60%">
     <div class="shade"></div>
@@ -864,7 +866,7 @@ body.rtl .dots{flex-direction:row-reverse}
         <div class="ar-card"><h3>المطبوعات والكتيبات</h3><p>مواد تعريفية يمكن توزيعها في المساجد والفعاليات والأماكن المجتمعية.</p></div>
       </div>
     </div>
-    <div class="page-foot"><b>06</b></div>
+    <div class="page-foot"><b>٠٦</b></div>
   </article>
   <article class="page arp photo on-dark di-theme">
     <img class="bg" src="assets/box-cosy.jpg" alt="" style="object-position:50% 40%">
@@ -879,12 +881,12 @@ body.rtl .dots{flex-direction:row-reverse}
       </div>
       <p class="ar-note">تُسهم الهدية في ربط التعريف بالإسلام بالدعم العملي في بداية الرحلة.</p>
     </div>
-    <div class="page-foot"><b>07</b></div>
+    <div class="page-foot"><b>٠٧</b></div>
   </article>
 </section>
 
 <!-- PDF pages 8–9 -->
-<section class="sheet spread" data-label="الصفحتان 8–9 · مركز المسلم الجديد والمعارض" hidden>
+<section class="sheet spread" data-label="الصفحتان ٨–٩ · مركز المسلم الجديد والمعارض" hidden>
   <article class="page arp photo on-dark di-theme right">
     <img class="bg" src="assets/ai-wellbeing.jpg" alt="" style="object-position:72% 35%">
     <div class="shade"></div>
@@ -897,7 +899,7 @@ body.rtl .dots{flex-direction:row-reverse}
         <div class="ar-card"><h3>التوجيه والإرشاد</h3><p>تطوير مسارات تساعد المسلم الجديد على طرح أسئلته، ومعرفة الخطوات التالية، والوصول إلى الدعم المناسب.</p></div>
       </div>
     </div>
-    <div class="page-foot"><b>08</b></div>
+    <div class="page-foot"><b>٠٨</b></div>
   </article>
   <article class="page arp photo on-dark di-theme">
     <img class="bg" src="assets/ai-exhibitions.jpg" alt="" style="object-position:66% 40%">
@@ -906,38 +908,38 @@ body.rtl .dots{flex-direction:row-reverse}
       <span class="chip"><span>المعارض والأيام المفتوحة</span></span>
       <h2 class="ar-h">لقاء مباشر يفتح باب الحوار</h2>
       <p class="ar-lede">تمنح المعارض والأيام المفتوحة الزوار فرصة للتعرّف إلى الإسلام من خلال المواد المرئية، والمحادثات، والموارد التعليمية.</p>
-      <div class="ar-stats one"><div class="ar-stat"><b class="num">100+</b><span>معرض متنقل خلال مسيرة المؤسسة</span></div></div>
+      <div class="ar-stats one"><div class="ar-stat"><b class="num">١٠٠+</b><span>معرض متنقل خلال مسيرة المؤسسة</span></div></div>
       <p class="ar-note">تراكمت هذه الخبرة على مدى سنوات العمل، وهي تدعم تطوير تجارب تعريفية مناسبة للمجتمعات والمؤسسات.</p>
     </div>
-    <div class="page-foot"><b>09</b></div>
+    <div class="page-foot"><b>٠٩</b></div>
   </article>
 </section>
 
 <!-- PDF pages 10–11 -->
-<section class="sheet spread" data-label="الصفحتان 10–11 · تكامل المشاريع والشراكة" hidden>
+<section class="sheet spread" data-label="الصفحتان ١٠–١١ · تكامل المشاريع والشراكة" hidden>
   <article class="page arp right">
     <span class="eyebrow">كيف تتكامل المشاريع؟</span>
     <h2 class="ar-h">من اللقاء الأول إلى الدعم المستمر</h2>
     <div class="ar-cards wrap">
-      <div class="ar-card"><span class="stepn">1</span><h3>التعرّف</h3><p>زيارة مدرسية أو معرض أو لقاء مجتمعي.</p></div>
-      <div class="ar-card"><span class="stepn">2</span><h3>مواصلة التعلّم</h3><p>مطبوعات وموارد صوتية ورقمية.</p></div>
-      <div class="ar-card"><span class="stepn">3</span><h3>الترحيب</h3><p>تقديم هدية المسلم الجديد والموارد الأولية.</p></div>
-      <div class="ar-card"><span class="stepn">4</span><h3>التوجيه</h3><p>ربط المسلم الجديد بمسارات التعلّم والإرشاد.</p></div>
-      <div class="ar-card"><span class="stepn">5</span><h3>الشراكة</h3><p>تعاون مستمر مع المساجد والمؤسسات لتوسيع الأثر.</p></div>
+      <div class="ar-card"><span class="stepn">١</span><h3>التعرّف</h3><p>زيارة مدرسية أو معرض أو لقاء مجتمعي.</p></div>
+      <div class="ar-card"><span class="stepn">٢</span><h3>مواصلة التعلّم</h3><p>مطبوعات وموارد صوتية ورقمية.</p></div>
+      <div class="ar-card"><span class="stepn">٣</span><h3>الترحيب</h3><p>تقديم هدية المسلم الجديد والموارد الأولية.</p></div>
+      <div class="ar-card"><span class="stepn">٤</span><h3>التوجيه</h3><p>ربط المسلم الجديد بمسارات التعلّم والإرشاد.</p></div>
+      <div class="ar-card"><span class="stepn">٥</span><h3>الشراكة</h3><p>تعاون مستمر مع المساجد والمؤسسات لتوسيع الأثر.</p></div>
     </div>
-    <div class="page-foot"><b>10</b></div>
+    <div class="page-foot"><b>١٠</b></div>
   </article>
   <article class="page arp">
     <span class="eyebrow">الشراكة مع المؤسسات</span>
     <h2 class="ar-h">شراكة واضحة وأثر مشترك</h2>
     <p class="ar-lede">نعمل مع المؤسسات لفهم احتياجاتها، وتحديد الأنشطة المناسبة، وتنفيذ البرامج ومراجعة أثرها.</p>
     <div class="ar-cards c2">
-      <div class="ar-card"><span class="stepn">1</span><h3>فهم الاحتياجات</h3><p>التعرّف إلى أهداف المؤسسة والجمهور الذي تخدمه.</p></div>
-      <div class="ar-card"><span class="stepn">2</span><h3>الاتفاق على البرنامج</h3><p>تحديد الخدمة المناسبة والأدوار المتوقعة.</p></div>
-      <div class="ar-card"><span class="stepn">3</span><h3>التنفيذ</h3><p>تقديم البرنامج أو الموارد المتفق عليها.</p></div>
-      <div class="ar-card"><span class="stepn">4</span><h3>مراجعة الأثر</h3><p>تبادل الملاحظات وتحديد فرص التطوير.</p></div>
+      <div class="ar-card"><span class="stepn">١</span><h3>فهم الاحتياجات</h3><p>التعرّف إلى أهداف المؤسسة والجمهور الذي تخدمه.</p></div>
+      <div class="ar-card"><span class="stepn">٢</span><h3>الاتفاق على البرنامج</h3><p>تحديد الخدمة المناسبة والأدوار المتوقعة.</p></div>
+      <div class="ar-card"><span class="stepn">٣</span><h3>التنفيذ</h3><p>تقديم البرنامج أو الموارد المتفق عليها.</p></div>
+      <div class="ar-card"><span class="stepn">٤</span><h3>مراجعة الأثر</h3><p>تبادل الملاحظات وتحديد فرص التطوير.</p></div>
     </div>
-    <div class="page-foot"><b>11</b></div>
+    <div class="page-foot"><b>١١</b></div>
   </article>
 </section>
 
@@ -985,14 +987,16 @@ body.rtl .dots{flex-direction:row-reverse}
   // Viewer chrome: data-ar holds the Arabic label
   const chrome=[...document.querySelectorAll('.viewer-header [data-ar]')].map(el=>({el,en:el.innerHTML,ar:el.dataset.ar}));
 
+  // Arabic book uses Arabic-Indic digits (٠-٩, ٬ for thousands)
+  const fmt=n=>n.toLocaleString(lang==='ar'?'ar-u-nu-arab':'en-GB');
   function countUp(root){
     if(reduce) return;
     root.querySelectorAll('.num').forEach(el=>{
-      const final=el.textContent.trim(), m=final.match(/^([\d,]+)(\+?)$/);
+      const final=el.textContent.trim(), m=final.match(/^([\d,٠-٩٬]+)(\+?)$/);
       if(!m) return;
-      const to=+m[1].replace(/,/g,''), suf=m[2], t0=performance.now(), dur=1400;
+      const to=+m[1].replace(/[٠-٩]/g,d=>d.charCodeAt(0)-0x660).replace(/[,٬]/g,''), suf=m[2], t0=performance.now(), dur=1400;
       (function tick(t){const p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,4);
-        el.textContent=p<1?Math.round(to*e).toLocaleString('en-GB')+suf:final;
+        el.textContent=p<1?fmt(Math.round(to*e))+suf:final;
         if(p<1) requestAnimationFrame(tick);})(t0);
     });
   }
@@ -1001,7 +1005,7 @@ body.rtl .dots{flex-direction:row-reverse}
     current=Math.max(0,Math.min(sheets.length-1,i));
     if(mode==='spread'){sheets.forEach((s,j)=>s.hidden=j!==current);countUp(sheets[current]);}
     prev.disabled=current===0; next.disabled=current===sheets.length-1;
-    pos.innerHTML='<b>'+sheets[current].dataset.label+'</b> &nbsp;·&nbsp; '+(current+1)+' / '+sheets.length;
+    pos.innerHTML='<b>'+sheets[current].dataset.label+'</b> &nbsp;·&nbsp; '+fmt(current+1)+' / '+fmt(sheets.length);
     [...dots.children].forEach((d,j)=>d.setAttribute('aria-current',j===current));
     try{sessionStorage.setItem(KEY,lang+':'+current)}catch(e){}
   }
