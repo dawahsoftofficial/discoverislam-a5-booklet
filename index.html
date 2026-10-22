@@ -258,22 +258,74 @@ body.overview .sheet-label{display:block}
 .back .rule{width:70px;height:3px;border-radius:3px;background:var(--g-di);margin:0 auto 22px}
 .back .contact{font:500 11.5px/1.8 var(--body);color:#ffffffb3}
 
-/* ───────────── Arabic (right-to-left) ───────────── */
-html[lang=ar]{--display:"Outfit","IBM Plex Sans Arabic",system-ui,sans-serif;--body:"Mulish","IBM Plex Sans Arabic",system-ui,sans-serif}
-html[lang=ar] .page{direction:rtl}
-html[lang=ar] .page-foot{direction:ltr}
-html[lang=ar] .page *:not(.nmc-logo i){letter-spacing:0!important}
-html[lang=ar] .page h1,html[lang=ar] .page h2,html[lang=ar] .page h3{line-height:1.3}
-html[lang=ar] .page p,html[lang=ar] .page q{line-height:1.75}
-html[lang=ar] .cover h1{font-size:58px;line-height:1.25}
-html[lang=ar] .eyebrow::after{left:auto;right:0}
-html[lang=ar] .tl .track span{inset:0 0 0 auto}
-html[lang=ar] .tl .stop::before{left:auto;right:0}
-html[lang=ar] .since::before{left:auto;right:0}
-html[lang=ar] .st::before{left:auto;right:0}
-html[lang=ar] .st .num,html[lang=ar] .tl b,html[lang=ar] .yrs b{direction:ltr;unicode-bidi:isolate;text-align:right}
-html[lang=ar] .st .num{font-size:38px}
-html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0 11px 0 0}
+/* ───────────── Arabic booklet (right-to-left, content from the Arabic PDF) ───────────── */
+html[lang=ar]{--display:"IBM Plex Sans Arabic","Outfit",system-ui,sans-serif;--body:"IBM Plex Sans Arabic","Mulish",system-ui,sans-serif}
+#book-ar .sheet{direction:rtl}
+#book-ar .page-foot{direction:ltr}
+#book-ar .page *{letter-spacing:0!important}
+#book-ar .eyebrow::after{left:auto;right:0}
+#book-ar .ltr{direction:ltr;unicode-bidi:isolate}
+#book-ar .num{font-family:"Outfit",sans-serif;direction:ltr;unicode-bidi:isolate}
+body.rtl #prev{left:auto;right:16px} body.rtl #next{right:auto;left:16px}
+body.rtl .dots{flex-direction:row-reverse}
+.arp{background:var(--paper);display:flex;flex-direction:column}
+.ar-h{font:700 34px/1.35 var(--display);color:var(--ink);margin:16px 0 8px}
+.ar-lede{font:400 13.5px/1.85 var(--body);color:#3b3d3b;max-width:660px}
+.ar-cards{display:grid;gap:12px;margin-top:auto}
+.ar-cards.c2{grid-template-columns:1fr 1fr}
+.ar-cards.c3{grid-template-columns:repeat(3,1fr)}
+.ar-cards.wrap{display:flex;flex-wrap:wrap;justify-content:center}
+.ar-cards.wrap>*{flex:0 0 calc((100% - 24px)/3)}
+.ar-card{background:#fff;border:1px solid #0000000f;border-radius:14px;padding:16px 18px}
+.ar-card h3{font:700 15.5px/1.45 var(--display);color:var(--di-deep);margin-bottom:5px}
+.ar-card p{font:400 12px/1.8 var(--body);color:#41443f}
+.ar-card .ib{width:42px;height:42px;border-radius:12px;background:#CB892A14;display:grid;place-items:center;margin-bottom:10px}
+.ar-card .ib .ico{width:24px;height:24px}
+.ar-card .stepn{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--g-di);color:#08180F;font:800 14px/1 "Outfit",sans-serif;margin-bottom:10px}
+.ar-note{margin-top:16px;font:500 13px/1.8 var(--body);color:var(--di-green-d);border-right:3px solid var(--di-gold);padding-right:12px}
+.ar-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:auto}
+.ar-stats.one{grid-template-columns:minmax(0,300px);margin-top:18px}
+.ar-stat{background:#fff;border:1px solid #0000000f;border-radius:14px;padding:20px 14px;text-align:center}
+.ar-stat .num{display:block;font-weight:800;font-size:40px;line-height:1.1;background:linear-gradient(90deg,#D9A024,var(--di-gold) 55%,#B5761E);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ar-stat span{display:block;font:500 12px/1.6 var(--body);color:var(--muted);margin-top:6px}
+.arp:not(.photo) .ar-cards,.arp:not(.photo) .ar-stats{margin:auto 0}
+.arp:not(.photo) .ar-lede{font-size:14.5px}
+.arp:not(.photo) .ar-card{padding:20px 22px}
+.arp:not(.photo) .ar-card h3{font-size:17px}
+.arp:not(.photo) .ar-card p{font-size:13px}
+.arp:not(.photo) .ar-stat{padding:24px 14px}
+.arp:not(.photo) .ar-stat .num{font-size:44px}
+.arp:not(.photo) .ar-stat span{font-size:13px}
+.arp.photo{background:var(--di-deep);color:#fff;padding:0}
+.arp.photo .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.arp.photo .shade{position:absolute;inset:0;background:linear-gradient(0deg,#08180F 0%,#08180Ff2 44%,#08180Fa6 64%,#08180F33 88%)}
+.arp.photo .inner{position:absolute;inset:0;padding:30px 44px 60px;display:flex;flex-direction:column;z-index:2}
+.arp.photo .ar-h{color:#fff;margin-top:auto;text-shadow:0 2px 20px #0006}
+.arp.photo .ar-lede{color:#ffffffd9}
+.arp.photo .ar-cards{margin-top:16px}
+.arp.photo .ar-card{background:#08180Fb3;border-color:#ffffff1f;backdrop-filter:blur(6px)}
+.arp.photo .ar-card h3{color:var(--di-gold-hi)}
+.arp.photo .ar-card p{color:#ffffffd1}
+.arp.photo .ar-note{color:#fff}
+.arp.photo .ar-stat{background:#08180Fb3;border-color:#ffffff1f}
+.arp.photo .ar-stat .num{background:linear-gradient(90deg,#F7CC5A,var(--di-gold-hi) 45%,#E09B34);-webkit-background-clip:text;background-clip:text}
+.arp.photo .ar-stat span{color:#ffffffd1}
+.arcover,.arback{background:linear-gradient(135deg,#0B2117 0%,#0A1D15 50%,#123326 100%);color:#fff;display:flex;flex-direction:column;padding:46px 50px 40px}
+.arcover>*:not(.pattern),.arback>*:not(.pattern){position:relative}
+.arcover .logo img{height:44px;display:block}
+.arcover h1{font:700 52px/1.3 var(--display);margin-top:auto}
+.arcover h1 span{color:var(--di-gold-hi)}
+.arcover .sub{font:400 15px/1.8 var(--body);color:#ffffffcc;margin-top:12px;max-width:620px}
+.ar-glass{background:#ffffff0f;border:1px solid #ffffff24;border-radius:14px;padding:16px 20px;margin-top:24px}
+.ar-glass h3{font:700 16px/1.4 var(--display);color:var(--di-gold-hi);margin-bottom:4px}
+.ar-glass p{font:400 12.5px/1.8 var(--body);color:#ffffffcc}
+.arcover .foot{margin-top:auto;font:500 11.5px/1.6 var(--body);color:#ffffff99}
+.arback h2{font:700 32px/1.45 var(--display);margin-top:16px}
+.arback .ar-lede{color:#ffffffcc;margin-top:8px}
+.arback .ar-glass .line{display:block;direction:ltr;unicode-bidi:isolate;text-align:right;font:500 12.5px/1.9 "Mulish",sans-serif;color:#fff}
+.arback .bottom{margin-top:auto;display:flex;align-items:center;gap:16px}
+.arback .bottom img{height:40px}
+.arback .bottom span{font:500 11px/1.4 "Mulish",sans-serif;color:#ffffffaa}
 
 /* ───────────── Print ───────────── */
 @page{size:210mm 148mm;margin:0}
@@ -289,8 +341,8 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
   .page{width:210mm;height:147.9mm;break-after:page;page-break-after:always;box-shadow:none!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   /* PDF engines leave hairline slivers beside background-clip:text — print solid brand colours instead */
-  .grad-di,.grad-nmc,.grad-both,.st .num,.tl .next b,.voice .qm,.highlight b,.nmc-logo i{background:none!important;-webkit-text-fill-color:currentColor}
-  .grad-di,.grad-nmc,.grad-both,.st .num,.tl .next b,.voice .qm,.nmc-logo i{color:#E0A12C}
+  .grad-di,.grad-nmc,.grad-both,.st .num,.tl .next b,.voice .qm,.highlight b,.nmc-logo i,.ar-stat .num{background:none!important;-webkit-text-fill-color:currentColor}
+  .grad-di,.grad-nmc,.grad-both,.st .num,.tl .next b,.voice .qm,.nmc-logo i,.ar-stat .num{color:#E0A12C}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media (max-width:700px){
@@ -323,7 +375,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </svg>
 
 <header class="viewer-header">
-  <div class="id"><img src="assets/di-mark.png" alt=""><strong>Discover Islam</strong><span data-ar="<span dir='rtl'>دورة دعوية متكاملة · كتيّب A5 أفقي</span>">A Wholistic Da’wa Cycle · A5 landscape booklet</span></div>
+  <div class="id"><img src="assets/di-mark.png" alt=""><strong>Discover Islam</strong><span data-ar="<span dir='rtl'>كتيّب تعريفي للمؤسسات والشركاء المحتملين</span>">A Wholistic Da’wa Cycle · A5 landscape booklet</span></div>
   <div class="seg lang" role="group" aria-label="Language">
     <button id="lang-en" aria-pressed="true">English</button>
     <button id="lang-ar" aria-pressed="false" lang="ar">العربية</button>
@@ -340,10 +392,10 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 
 <div class="stage">
 <div class="book-frame">
-<main class="book" aria-label="Discover Islam booklet">
+<main class="book" id="book-en" aria-label="Discover Islam booklet">
 
 <!-- ═════════ COVER ═════════ -->
-<section class="sheet single" data-label="Front cover" data-label-ar="الغلاف" aria-label="Front cover">
+<section class="sheet single" data-label="Front cover" aria-label="Front cover">
   <div class="blank"></div>
   <article class="page cover on-dark">
     <div class="pattern di" style="opacity:.25"></div>
@@ -359,7 +411,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </section>
 
 <!-- ═════════ CEO FOREWORD ═════════ -->
-<section class="sheet spread" data-label="CEO foreword" data-label-ar="كلمة الرئيس التنفيذي" aria-label="CEO foreword" hidden>
+<section class="sheet spread" data-label="CEO foreword" aria-label="CEO foreword" hidden>
   <article class="page fw">
     <span class="eyebrow">CEO Foreword</span>
     <h1 class="h-xl">A strong start.<br>A lifelong foundation.</h1>
@@ -394,7 +446,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </section>
 
 <!-- ═════════ PAGES 1–2: THE TWO ORGANISATIONS ═════════ -->
-<section class="sheet spread" data-label="Pages 1–2 · Who we are" data-label-ar="الصفحتان 1–2 · من نحن" aria-label="Pages 1 and 2" hidden>
+<section class="sheet spread" data-label="Pages 1–2 · Who we are" aria-label="Pages 1 and 2" hidden>
   <article class="page brand-page di">
     <span class="est">Est. 2008</span>
     <div class="logo-main"><img src="assets/di-logo.png" alt="Discover Islam"></div>
@@ -414,7 +466,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </section>
 
 <!-- ═════════ PAGES 3–4: OUR SERVICES ═════════ -->
-<section class="sheet spread" data-label="Pages 3–4 · Our services" data-label-ar="الصفحتان 3–4 · خدماتنا" aria-label="Pages 3 and 4" hidden>
+<section class="sheet spread" data-label="Pages 3–4 · Our services" aria-label="Pages 3 and 4" hidden>
   <article class="page svc-l">
     <span class="eyebrow">Our Services</span>
     <h2 class="h-xl">Our services.</h2>
@@ -452,7 +504,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </section>
 
 <!-- ═════════ PAGES 5–6: OUR IMPACT ═════════ -->
-<section class="sheet spread" data-label="Pages 5–6 · Our impact" data-label-ar="الصفحتان 5–6 · أثرنا" aria-label="Pages 5 and 6" hidden>
+<section class="sheet spread" data-label="Pages 5–6 · Our impact" aria-label="Pages 5 and 6" hidden>
   <article class="page imp-l on-dark">
     <img class="bg" src="assets/ai-skyline.jpg" alt="">
     <div class="shade"></div>
@@ -484,7 +536,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </section>
 
 <!-- ═════════ PAGES 7–8: SCHOOLS ═════════ -->
-<section class="sheet spread di-theme" data-label="Pages 7–8 · Schools" data-label-ar="الصفحتان 7–8 · الزيارات المدرسية" aria-label="Pages 7 and 8: Schools" hidden>
+<section class="sheet spread di-theme" data-label="Pages 7–8 · Schools" aria-label="Pages 7 and 8: Schools" hidden>
   <article class="page prog on-dark">
     <div class="bgw"><img src="assets/ai-schools.jpg" alt=""></div>
     <div class="inner">
@@ -495,7 +547,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
       <div class="tl"><div class="track"><span style="width:58%"></span></div>
         <div class="stop"><b>2008</b><span class="l">first school visits</span></div>
         <div class="stop now"><b>1,000+</b><span class="l">school &amp; mosque visits</span></div>
-        <div class="stop next"><b data-ar="100,000+">3</b><span class="l">boroughs · Tri-Borough SACRE members</span></div>
+        <div class="stop next"><b>3</b><span class="l">boroughs · Tri-Borough SACRE members</span></div>
       </div>
     </div>
     <div class="page-foot"><b>07</b><span>Discover Islam</span></div>
@@ -516,7 +568,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </section>
 
 <!-- ═════════ PAGES 9–10: EXHIBITIONS ═════════ -->
-<section class="sheet spread di-theme" data-label="Pages 9–10 · Exhibitions" data-label-ar="الصفحتان 9–10 · المعارض" aria-label="Pages 9 and 10: Exhibitions" hidden>
+<section class="sheet spread di-theme" data-label="Pages 9–10 · Exhibitions" aria-label="Pages 9 and 10: Exhibitions" hidden>
   <article class="page prog on-dark">
     <div class="bgw"><img src="assets/ai-exhibitions.jpg" alt=""></div>
     <div class="inner">
@@ -526,7 +578,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
       <p class="body">Interactive, fully mobile exhibitions for mosques, universities and public spaces, even highly secured government buildings such as the Ministry of Justice.</p>
       <div class="tl"><div class="track"><span style="width:58%"></span></div>
         <div class="stop"><b>2008</b><span class="l">first exhibitions</span></div>
-        <div class="stop now"><b>100+</b><span class="l" data-ar="معرض متنقل خلال مسيرة المؤسسة">exhibitions delivered</span></div>
+        <div class="stop now"><b>100+</b><span class="l">exhibitions delivered</span></div>
         <div class="stop next"><b>MoJ</b><span class="l">hosted at the Ministry of Justice</span></div>
       </div>
     </div>
@@ -548,7 +600,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </section>
 
 <!-- ═════════ PAGES 11–12: LITERATURE ═════════ -->
-<section class="sheet spread di-theme" data-label="Pages 11–12 · Literature" data-label-ar="الصفحتان 11–12 · المطبوعات" aria-label="Pages 11 and 12: Literature" hidden>
+<section class="sheet spread di-theme" data-label="Pages 11–12 · Literature" aria-label="Pages 11 and 12: Literature" hidden>
   <article class="page prog on-dark">
     <div class="bgw"><img src="assets/literature-hero-bg.jpg" alt="" style="object-position:50% 62%"></div>
     <div class="inner">
@@ -580,7 +632,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </section>
 
 <!-- ═════════ PAGES 13–14: NEW MUSLIM BOX ═════════ -->
-<section class="sheet spread nmc-theme" data-label="Pages 13–14 · New Muslim Box" data-label-ar="الصفحتان 13–14 · هدية المسلم الجديد" aria-label="Pages 13 and 14: New Muslim Box" hidden>
+<section class="sheet spread nmc-theme" data-label="Pages 13–14 · New Muslim Box" aria-label="Pages 13 and 14: New Muslim Box" hidden>
   <article class="page prog on-dark">
     <div class="bgw"><img src="assets/box-cosy.jpg" alt=""></div>
     <div class="inner">
@@ -613,7 +665,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </section>
 
 <!-- ═════════ PAGES 15–16: WELL-BEING CENTRE ═════════ -->
-<section class="sheet spread nmc-theme" data-label="Pages 15–16 · Well-being Centre" data-label-ar="الصفحتان 15–16 · مركز الرفاه" aria-label="Pages 15 and 16: Well-being Centre" hidden>
+<section class="sheet spread nmc-theme" data-label="Pages 15–16 · Well-being Centre" aria-label="Pages 15 and 16: Well-being Centre" hidden>
   <article class="page prog on-dark">
     <div class="bgw"><img src="assets/ai-wellbeing.jpg" alt=""></div>
     <div class="inner">
@@ -645,7 +697,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </section>
 
 <!-- ═════════ PAGES 17–18: UMRAH ═════════ -->
-<section class="sheet spread nmc-theme" data-label="Pages 17–18 · Umrah Programme" data-label-ar="الصفحتان 17–18 · برنامج العمرة" aria-label="Pages 17 and 18: Umrah Programme" hidden>
+<section class="sheet spread nmc-theme" data-label="Pages 17–18 · Umrah Programme" aria-label="Pages 17 and 18: Umrah Programme" hidden>
   <article class="page prog on-dark">
     <div class="bgw"><img src="assets/ai-umrah.jpg" alt=""></div>
     <div class="inner">
@@ -677,7 +729,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </section>
 
 <!-- ═════════ PAGES 19–20: GET INVOLVED ═════════ -->
-<section class="sheet spread di-theme" data-label="Pages 19–20 · Get involved" data-label-ar="الصفحتان 19–20 · للتواصل والشراكة" aria-label="Pages 19 and 20: Get involved" hidden>
+<section class="sheet spread di-theme" data-label="Pages 19–20 · Get involved" aria-label="Pages 19 and 20: Get involved" hidden>
   <article class="page prog on-dark">
     <div class="bgw"><img src="assets/ai-mosque-visit.jpg" alt="" style="object-position:50% 58%"></div>
     <div class="inner">
@@ -704,7 +756,7 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </section>
 
 <!-- ═════════ BACK COVER ═════════ -->
-<section class="sheet single" data-label="Back cover" data-label-ar="الغلاف الخلفي" aria-label="Back cover" hidden>
+<section class="sheet single" data-label="Back cover" aria-label="Back cover" hidden>
   <div class="blank"></div>
   <article class="page back">
     <div class="pattern di" style="opacity:.25"></div>
@@ -720,6 +772,195 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </section>
 
 </main>
+
+<!-- ═════════════════════ ARABIC BOOKLET — content from the supplied Arabic PDF only; reads right-to-left ═════════════════════ -->
+<main class="book" id="book-ar" lang="ar" aria-label="كتيّب Discover Islam" hidden>
+
+<!-- PDF page 1 — front cover -->
+<section class="sheet single" data-label="الغلاف" hidden>
+  <div class="blank"></div>
+  <article class="page arcover on-dark">
+    <div class="pattern di" style="opacity:.25"></div>
+    <div class="logo"><img src="assets/di-logo.png" alt="Discover Islam"></div>
+    <h1>من التعريف بالإسلام<br><span>إلى دعم المسلم الجديد</span></h1>
+    <p class="sub">مسارات متكاملة للتعريف بالإسلام، وتقديم الموارد التعليمية، ومساندة المسلم الجديد في بداية رحلته.</p>
+    <div class="ar-glass"><h3 class="ltr">Discover Islam</h3><p>التعريف بالإسلام والتعليم والتواصل المجتمعي</p></div>
+    <p class="foot">كتيّب تعريفي للمؤسسات والشركاء المحتملين</p>
+  </article>
+</section>
+
+<!-- PDF pages 2–3 -->
+<section class="sheet spread" data-label="الصفحتان 2–3 · من نحن" hidden>
+  <article class="page arp right">
+    <span class="eyebrow">من نحن</span>
+    <h2 class="ar-h">رسالة واحدة، ومسارات متكاملة</h2>
+    <p class="ar-lede">نعمل على تقديم الإسلام بصورة واضحة وأصيلة، وتوفير موارد وخدمات تساعد المساجد والمدارس والمجتمعات على التعلم والتواصل.</p>
+    <div class="ar-cards c2">
+      <div class="ar-card"><h3>مركز المسلم الجديد</h3><p>الترحيب بالمسلم الجديد وتوفير الموارد والخدمات التي تساعده في بداية رحلته، مع تطوير مسارات للتوجيه والإرشاد.</p></div>
+      <div class="ar-card"><h3 class="ltr">Discover Islam</h3><p>التعريف بالإسلام من خلال الزيارات المدرسية، والمعارض، والمطبوعات، والموارد التعليمية، والمحاضرات.</p></div>
+    </div>
+    <p class="ar-note">تتكامل هذه المسارات لتصل المعرفة إلى الناس، وتوفر دعماً عملياً لمن يبدأ رحلته مع الإسلام.</p>
+    <div class="page-foot"><b>02</b></div>
+  </article>
+  <article class="page arp">
+    <span class="eyebrow">أثرنا بالأرقام</span>
+    <h2 class="ar-h">خبرة وأثر ممتدان</h2>
+    <div class="ar-stats">
+      <div class="ar-stat"><b class="num">20+</b><span>عاماً من الخبرة</span></div>
+      <div class="ar-stat"><b class="num">2,000+</b><span>زيارة وعرض مدرسي</span></div>
+      <div class="ar-stat"><b class="num">100,000+</b><span>طالب ومعلّم تم الوصول إليهم</span></div>
+      <div class="ar-stat"><b class="num">1,000,000+</b><span>مادة تعريفية موزعة</span></div>
+      <div class="ar-stat"><b class="num">5,000+</b><span>مسلم جديد تمت مساندته</span></div>
+      <div class="ar-stat"><b class="num">100+</b><span>جهة شريكة ومعرض متنقل خلال مسيرة المؤسسة</span></div>
+    </div>
+    <p class="ar-note">هذه الأرقام تعكس العمل المتراكم عبر مسيرة المؤسسة، وليست أرقاماً سنوية.</p>
+    <div class="page-foot"><b>03</b></div>
+  </article>
+</section>
+
+<!-- PDF pages 4–5 -->
+<section class="sheet spread" data-label="الصفحتان 4–5 · الخدمات والزيارات المدرسية" hidden>
+  <article class="page arp right">
+    <span class="eyebrow">خدمات <span class="ltr">Discover Islam</span></span>
+    <h2 class="ar-h">تعريف وتعليم وتواصل</h2>
+    <div class="ar-cards wrap">
+      <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-school"/></svg></div><h3>الزيارات المدرسية</h3><p>تقديم محتوى تعليمي يساعد الطلاب على فهم الإسلام.</p></div>
+      <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-exhibit"/></svg></div><h3>المعارض والأيام المفتوحة</h3><p>مساحات للحوار والتعرّف المباشر والتواصل مع المجتمع.</p></div>
+      <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-book"/></svg></div><h3>المطبوعات والموارد</h3><p>كتيبات ومواد تعريفية سهلة الاستخدام والتوزيع.</p></div>
+      <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-mic"/></svg></div><h3>المتحدثون والتدريب</h3><p>دعم المؤسسات والمتطوعين بالمعرفة والموارد المناسبة.</p></div>
+      <div class="ar-card"><div class="ib"><svg class="ico di"><use href="#i-phone"/></svg></div><h3>المطويات الصوتية</h3><p>موارد يمكن الوصول إليها عبر رمز <span class="ltr">QR</span>.</p></div>
+    </div>
+    <div class="page-foot"><b>04</b></div>
+  </article>
+  <article class="page arp photo on-dark di-theme">
+    <img class="bg" src="assets/ai-schools.jpg" alt="" style="object-position:78% 40%">
+    <div class="shade"></div>
+    <div class="inner">
+      <span class="chip"><span>الزيارات المدرسية</span></span>
+      <h2 class="ar-h">التعلّم من خلال الحوار</h2>
+      <p class="ar-lede">تساعد الزيارات المدرسية الطلاب والمعلمين على التعرّف إلى الإسلام في بيئة تعليمية تفاعلية، مع إتاحة المجال للأسئلة والحوار المحترم.</p>
+      <div class="ar-cards c2">
+        <div class="ar-card"><h3>تجربة تفاعلية</h3><p>لقاء مباشر يتيح للطلاب طرح الأسئلة وفهم التنوع في المجتمع.</p></div>
+        <div class="ar-card"><h3>محتوى مناسب للمدارس</h3><p>عروض تعليمية وموارد تساعد على تقديم المعلومات بوضوح وموضوعية.</p></div>
+      </div>
+      <p class="ar-note">الهدف هو تعزيز المعرفة، وتشجيع الحوار البنّاء، ودعم التفاهم بين المجتمعات.</p>
+    </div>
+    <div class="page-foot"><b>05</b></div>
+  </article>
+</section>
+
+<!-- PDF pages 6–7 -->
+<section class="sheet spread" data-label="الصفحتان 6–7 · الموارد التعليمية وهدية المسلم الجديد" hidden>
+  <article class="page arp photo on-dark di-theme right">
+    <img class="bg" src="assets/literature-hero-bg.jpg" alt="" style="object-position:50% 60%">
+    <div class="shade"></div>
+    <div class="inner">
+      <span class="chip"><span>الموارد التعليمية</span></span>
+      <h2 class="ar-h">موارد تبقى بعد اللقاء</h2>
+      <p class="ar-lede">تتيح المواد المطبوعة والرقمية للناس مواصلة التعلّم بعد الزيارة أو المعرض، كما تساعد المساجد والمؤسسات على توفير مصادر تعريفية موثوقة.</p>
+      <div class="ar-cards c3">
+        <div class="ar-card"><h3>الملصقات وموارد التعلّم</h3><p>مواد مرئية تساعد على عرض موضوعات إسلامية بصورة مبسطة.</p></div>
+        <div class="ar-card"><h3>المطويات الصوتية</h3><p>رموز <span class="ltr">QR</span> تتيح الوصول إلى شرح صوتي أو محتوى رقمي مرتبط بالمطوية.</p></div>
+        <div class="ar-card"><h3>المطبوعات والكتيبات</h3><p>مواد تعريفية يمكن توزيعها في المساجد والفعاليات والأماكن المجتمعية.</p></div>
+      </div>
+    </div>
+    <div class="page-foot"><b>06</b></div>
+  </article>
+  <article class="page arp photo on-dark di-theme">
+    <img class="bg" src="assets/box-cosy.jpg" alt="" style="object-position:50% 40%">
+    <div class="shade"></div>
+    <div class="inner">
+      <span class="chip"><span>هدية المسلم الجديد</span></span>
+      <h2 class="ar-h">هدية المسلم الجديد</h2>
+      <p class="ar-lede">حزمة ترحيبية تساعد المسلم الجديد على بدء رحلته، وتوفر له مواد أساسية للتعلّم والعبادة.</p>
+      <div class="ar-cards c2">
+        <div class="ar-card"><h3>التوزيع عبر المساجد</h3><p>تُقدّم الحزم للمساجد للمساعدة في استقبال المسلمين الجدد وتزويدهم بموارد أولية.</p></div>
+        <div class="ar-card"><h3>محتويات الحزمة</h3><p>القرآن الكريم، كتب تعريفية، ملصقات للأدعية، مواد إرشادية، ملابس للصلاة، سجادة صلاة تعليمية، ماء زمزم، مطويات ومفكرة.</p></div>
+      </div>
+      <p class="ar-note">تُسهم الهدية في ربط التعريف بالإسلام بالدعم العملي في بداية الرحلة.</p>
+    </div>
+    <div class="page-foot"><b>07</b></div>
+  </article>
+</section>
+
+<!-- PDF pages 8–9 -->
+<section class="sheet spread" data-label="الصفحتان 8–9 · مركز المسلم الجديد والمعارض" hidden>
+  <article class="page arp photo on-dark di-theme right">
+    <img class="bg" src="assets/ai-wellbeing.jpg" alt="" style="object-position:72% 35%">
+    <div class="shade"></div>
+    <div class="inner">
+      <span class="chip"><span>مركز المسلم الجديد</span></span>
+      <h2 class="ar-h">ترحيب وتوجيه ومساندة</h2>
+      <p class="ar-lede">يركّز المركز على مساندة المسلم الجديد في بداية رحلته، وتسهيل الوصول إلى الموارد المناسبة وفرص التعلّم والتوجيه.</p>
+      <div class="ar-cards c2">
+        <div class="ar-card"><h3>الارتباط بالمجتمع</h3><p>تعزيز الصلة بالمساجد والجهات الشريكة لتسهيل التعلّم والمشاركة المجتمعية.</p></div>
+        <div class="ar-card"><h3>التوجيه والإرشاد</h3><p>تطوير مسارات تساعد المسلم الجديد على طرح أسئلته، ومعرفة الخطوات التالية، والوصول إلى الدعم المناسب.</p></div>
+      </div>
+    </div>
+    <div class="page-foot"><b>08</b></div>
+  </article>
+  <article class="page arp photo on-dark di-theme">
+    <img class="bg" src="assets/ai-exhibitions.jpg" alt="" style="object-position:66% 40%">
+    <div class="shade"></div>
+    <div class="inner">
+      <span class="chip"><span>المعارض والأيام المفتوحة</span></span>
+      <h2 class="ar-h">لقاء مباشر يفتح باب الحوار</h2>
+      <p class="ar-lede">تمنح المعارض والأيام المفتوحة الزوار فرصة للتعرّف إلى الإسلام من خلال المواد المرئية، والمحادثات، والموارد التعليمية.</p>
+      <div class="ar-stats one"><div class="ar-stat"><b class="num">100+</b><span>معرض متنقل خلال مسيرة المؤسسة</span></div></div>
+      <p class="ar-note">تراكمت هذه الخبرة على مدى سنوات العمل، وهي تدعم تطوير تجارب تعريفية مناسبة للمجتمعات والمؤسسات.</p>
+    </div>
+    <div class="page-foot"><b>09</b></div>
+  </article>
+</section>
+
+<!-- PDF pages 10–11 -->
+<section class="sheet spread" data-label="الصفحتان 10–11 · تكامل المشاريع والشراكة" hidden>
+  <article class="page arp right">
+    <span class="eyebrow">كيف تتكامل المشاريع؟</span>
+    <h2 class="ar-h">من اللقاء الأول إلى الدعم المستمر</h2>
+    <div class="ar-cards wrap">
+      <div class="ar-card"><span class="stepn">1</span><h3>التعرّف</h3><p>زيارة مدرسية أو معرض أو لقاء مجتمعي.</p></div>
+      <div class="ar-card"><span class="stepn">2</span><h3>مواصلة التعلّم</h3><p>مطبوعات وموارد صوتية ورقمية.</p></div>
+      <div class="ar-card"><span class="stepn">3</span><h3>الترحيب</h3><p>تقديم هدية المسلم الجديد والموارد الأولية.</p></div>
+      <div class="ar-card"><span class="stepn">4</span><h3>التوجيه</h3><p>ربط المسلم الجديد بمسارات التعلّم والإرشاد.</p></div>
+      <div class="ar-card"><span class="stepn">5</span><h3>الشراكة</h3><p>تعاون مستمر مع المساجد والمؤسسات لتوسيع الأثر.</p></div>
+    </div>
+    <div class="page-foot"><b>10</b></div>
+  </article>
+  <article class="page arp">
+    <span class="eyebrow">الشراكة مع المؤسسات</span>
+    <h2 class="ar-h">شراكة واضحة وأثر مشترك</h2>
+    <p class="ar-lede">نعمل مع المؤسسات لفهم احتياجاتها، وتحديد الأنشطة المناسبة، وتنفيذ البرامج ومراجعة أثرها.</p>
+    <div class="ar-cards c2">
+      <div class="ar-card"><span class="stepn">1</span><h3>فهم الاحتياجات</h3><p>التعرّف إلى أهداف المؤسسة والجمهور الذي تخدمه.</p></div>
+      <div class="ar-card"><span class="stepn">2</span><h3>الاتفاق على البرنامج</h3><p>تحديد الخدمة المناسبة والأدوار المتوقعة.</p></div>
+      <div class="ar-card"><span class="stepn">3</span><h3>التنفيذ</h3><p>تقديم البرنامج أو الموارد المتفق عليها.</p></div>
+      <div class="ar-card"><span class="stepn">4</span><h3>مراجعة الأثر</h3><p>تبادل الملاحظات وتحديد فرص التطوير.</p></div>
+    </div>
+    <div class="page-foot"><b>11</b></div>
+  </article>
+</section>
+
+<!-- PDF page 12 — back cover -->
+<section class="sheet single" data-label="الغلاف الخلفي · للتواصل والشراكة" hidden>
+  <div class="blank"></div>
+  <article class="page arback on-dark">
+    <div class="pattern di" style="opacity:.25"></div>
+    <span class="eyebrow">للتواصل والشراكة</span>
+    <h2>معاً لتعريف أوسع بالإسلام<br>ودعم أفضل للمسلم الجديد</h2>
+    <p class="ar-lede">نسعى إلى بناء شراكات مثمرة مع المساجد والمدارس والمؤسسات المجتمعية، لتوسيع أثرنا وتقديم خدمات متكاملة تخدم المجتمع.</p>
+    <div class="ar-glass">
+      <h3>للتواصل والشراكة</h3>
+      <span class="line">info@discoverislam.co.uk</span>
+      <span class="line">discoverislam.co.uk</span>
+      <span class="line">7 Bridges Place, Parsons Green, London SW6 4HW</span>
+    </div>
+    <div class="bottom"><img src="assets/di-logo.png" alt="Discover Islam"><span class="ltr">Registered Charity No. 1146212</span></div>
+  </article>
+</section>
+
+</main>
+
 </div>
 </div>
 
@@ -729,181 +970,20 @@ html[lang=ar] .sig{border-left:0;border-right:3px solid var(--di-gold);padding:0
 </footer>
 
 <script>
-const AR={
-"A Wholistic<br><span class=\"grad-both\">Da’wa Cycle.</span>": "من التعريف بالإسلام<br><span class=\"grad-both\">إلى دعم المسلم الجديد.</span>",
-"CEO Foreword": "كلمة الرئيس التنفيذي",
-"A strong start.<br>A lifelong foundation.": "بدايةٌ قوية.<br>وأساسٌ يدوم مدى الحياة.",
-"Support at the start. Belonging for life.": "دعمٌ في البداية، وانتماءٌ مدى الحياة.",
-"Dear Stakeholders, Partners, and Friends,": "شركاءنا وداعمينا وأصدقاءنا الأعزاء،",
-"Since 2022, our responsibility has been to be there for every new Muslim beyond the shahada. The declaration of faith is a beautiful moment; building a new way of life is where the journey begins.": "منذ عام 2022، حملنا مسؤولية الوقوف إلى جانب كل مسلم جديد بعد النطق بالشهادة. فإعلان الإسلام لحظة جميلة، أما بناء نمط حياة جديد فهو بداية الرحلة.",
-"Our mission is to support every new Muslim’s well-being and early development. Our vision is an interconnected ecosystem of care across the West, helping people build confidence, consistency, and belonging.": "رسالتنا دعم رفاه كل مسلم جديد ونموّه في مراحله الأولى. ورؤيتنا منظومة رعاية مترابطة في أنحاء الغرب، تساعد الناس على بناء الثقة والثبات والانتماء.",
-"This report shares our progress and future plans, shaped by four years of listening to our community.": "يعرض هذا الكتيّب ما حققناه وخططنا المستقبلية، وقد تشكّلت عبر أربع سنوات من الإصغاء إلى مجتمعنا.",
-"Looking ahead": "نظرة إلى المستقبل",
-"We are grateful to our founders, team, and stakeholders. Together, we are scaling our boxes, expanding local hubs, developing a helpline, and mapping community growth.": "نتقدّم بالشكر إلى مؤسسينا وفريقنا وشركائنا. ومعاً نوسّع توزيع هدايا المسلم الجديد، وننشر المراكز المحلية، ونطوّر خط مساندة، ونرصد نموّ المجتمع.",
-"Thank you for helping us welcome, protect, and nurture our community’s future.": "شكراً لكم على مساعدتنا في الترحيب بمستقبل مجتمعنا وحمايته ورعايته.",
-"Houssem Hassani": "حسام حساني",
-"Chief Executive Officer": "الرئيس التنفيذي",
-"Foreword": "كلمة الافتتاح",
-"A Wholistic Da’wa Cycle": "دورة دعوية متكاملة",
-"The declaration of faith is a beautiful moment; building a new way of life is where the journey begins.": "إعلان الإسلام لحظة جميلة، أما بناء نمط حياة جديد فهو بداية الرحلة.",
-"Est. 2008": "تأسست عام 2008",
-"Providing a variety of services within the Muslim and non‑Muslim community in the UK to promote a better understanding of Islam.": "نقدّم خدمات متنوعة للمجتمعين المسلم وغير المسلم في المملكة المتحدة، لتعزيز فهمٍ أفضل للإسلام.",
-"Understanding": "التعريف بالإسلام",
-"Est. 2022": "تأسس عام 2022",
-"Working towards an ecosystem of care and development for new Muslims through a variety of solutions.": "نعمل على بناء منظومة متكاملة لرعاية المسلمين الجدد وتنميتهم من خلال حلول متنوعة.",
-"Care &amp; development": "الرعاية والتنمية",
-"New Muslim Centre": "مركز المسلم الجديد",
-"Our Services": "خدماتنا",
-"Our services.": "خدماتنا.",
-"<small>Since</small>2008": "<small>منذ</small>2008",
-"<small>Since</small>2022": "<small>منذ</small>2022",
-"Since 2008, Discover Islam has provided services across the UK to mosques, universities and public schools. We have even hosted exhibitions in highly secured government buildings such as the Ministry of Justice.": "منذ عام 2008، تقدّم Discover Islam خدماتها في أنحاء المملكة المتحدة للمساجد والجامعات والمدارس الحكومية، بل واستضفنا معارض في مبانٍ حكومية عالية التأمين مثل وزارة العدل.",
-"Since 2022, New Muslim Centre has provided services to new Muslims to support their well-being and development after the shahada.": "منذ عام 2022، يقدّم مركز المسلم الجديد خدماته للمسلمين الجدد لدعم رفاههم ونموّهم بعد النطق بالشهادة.",
-"Our services": "خدماتنا",
-"What we do": "تعريف وتعليم وتواصل",
-"Nine services. One mission.": "تسع خدمات. رسالة واحدة.",
-"<i></i>New Muslim Centre": "<i></i>مركز المسلم الجديد",
-"School &amp; Mosque Visits": "الزيارات المدرسية وزيارات المساجد",
-"Curriculum-aligned RE": "محتوى تعليمي يساعد الطلاب على فهم الإسلام",
-"Exhibitions": "المعارض والأيام المفتوحة",
-"Interactive, mobile displays": "مساحات للحوار والتعرّف المباشر",
-"Literature": "المطبوعات والموارد",
-"Scholar-approved guides": "كتيبات ومواد تعريفية سهلة الاستخدام",
-"New Muslim Box": "هدية المسلم الجديد",
-"A welcome gift after shahada": "حزمة ترحيبية في بداية الرحلة",
-"Well-being Centre": "مركز الرفاه",
-"Hubs for belonging &amp; growth": "مراكز للانتماء والنمو",
-"Umrah Programme": "برنامج العمرة",
-"Faith brought to life": "إيمانٌ يُعاش واقعاً",
-"Between Us Podcast": "بودكاست «بيننا»",
-"Stories that connect": "قصص تقرّب المسافات",
-"New Muslim Helpline": "خط مساندة المسلم الجديد",
-"Support when it matters": "دعمٌ حين تشتد الحاجة",
-"Team Forever": "فريق Team Forever",
-"Our volunteer community": "مجتمع متطوعينا",
-"Our Impact": "أثرنا",
-"Our impact.": "أثرنا.",
-"18+": "20+",
-"years responding to the needs of the UK": "عاماً من الخبرة في خدمة المجتمع البريطاني",
-"For 18+ years we have assessed our environment and responded to the need in the UK for a better understanding of Islam. Following that, we supplemented this with services to support new Muslims in their well-being and development.": "على مدى أكثر من 20 عاماً، درسنا احتياجات بيئتنا واستجبنا لحاجة المملكة المتحدة إلى فهمٍ أفضل للإسلام، ثم أضفنا إلى ذلك خدمات تدعم المسلمين الجدد في رفاههم ونموّهم.",
-"What follows reflects the national impact we have made within the Muslim and non‑Muslim community to tackle these needs.": "وتعكس الصفحات التالية الأثر الوطني الذي حققناه داخل المجتمعين المسلم وغير المسلم لتلبية هذه الاحتياجات.",
-"Our impact": "أثرنا",
-"Impact at a glance": "أثرنا بالأرقام",
-"18+ years. 2 organisations. <em class=\"grad-both\">1 wholistic cycle.</em>": "خبرة وأثر ممتدان. <em class=\"grad-both\">دورة دعوية متكاملة.</em>",
-"1,000+": "2,000+",
-"visits completed": "زيارة وعرض مدرسي",
-"exhibitions delivered": "جهة شريكة ومعرض متنقل",
-"1,000,000": "1,000,000+",
-"pieces of literature shared": "مادة تعريفية موزعة",
-"boxes across 5 countries": "هدية في 5 دول",
-"UK communities with hubs": "مجتمعات بريطانية فيها مراكز",
-"1st": "الأولى",
-"Umrah trip delivered, 2026": "رحلة العمرة الأولى، 2026",
-"episodes released": "حلقة منشورة",
-"Helpline": "خط المساندة",
-"new Muslims supported": "مسلم جديد تمت مساندته",
-"volunteers giving their time": "متطوع يقدّمون وقتهم",
-"07 / Schools": "07 / الزيارات المدرسية",
-"Knowledge changes everything.": "التعلّم من خلال الحوار.",
-"Since 2008, our presenters have brought Islam to life for pupils across the UK, in classrooms and on mosque visits. Curriculum-aligned and scholar-reviewed.": "تساعد الزيارات المدرسية الطلاب والمعلمين على التعرّف إلى الإسلام في بيئة تعليمية تفاعلية، مع إتاحة المجال للأسئلة والحوار المحترم.",
-"first school visits": "أولى الزيارات المدرسية",
-"school &amp; mosque visits": "زيارة وعرض مدرسي",
-"boroughs · Tri-Borough SACRE members": "طالب ومعلّم تم الوصول إليهم",
-"Teacher feedback": "آراء المعلمين",
-"It was a great learning experience! The children were extremely engaged.": "كانت تجربة تعليمية رائعة! تفاعل الأطفال معها بشكل كبير.",
-"<i>W</i>Westbridge Primary School <em></em><span>England</span>": "<i>W</i>مدرسة Westbridge الابتدائية <em></em><span>إنجلترا</span>",
-"09 / Exhibitions": "09 / المعارض والأيام المفتوحة",
-"Promoting understanding through engagement.": "لقاء مباشر يفتح باب الحوار.",
-"Interactive, fully mobile exhibitions for mosques, universities and public spaces, even highly secured government buildings such as the Ministry of Justice.": "تمنح المعارض والأيام المفتوحة الزوار فرصة للتعرّف إلى الإسلام من خلال المواد المرئية والمحادثات والموارد التعليمية، حتى في مبانٍ حكومية مثل وزارة العدل.",
-"first exhibitions": "أولى المعارض",
-"MoJ": "وزارة العدل",
-"hosted at the Ministry of Justice": "استضافة معرض في وزارة العدل",
-"Visitor feedback": "آراء الزوار",
-"Very welcoming and calming environment. Our host spoke beautifully and answered the questions wonderfully.": "بيئة مرحّبة ومريحة للغاية. تحدّث مضيفنا بأسلوب جميل وأجاب عن الأسئلة بشكل رائع.",
-"<i>S</i>St Paul’s Primary School <em></em><span>Whiteinch</span>": "<i>S</i>مدرسة St Paul’s الابتدائية <em></em><span>Whiteinch</span>",
-"11 / Literature": "11 / المطبوعات والموارد",
-"The message, shared with clarity.": "موارد تبقى بعد اللقاء.",
-"Free, scholar-approved guides on the questions people ask most, from Jesus in Islam to the hijab, for events, schools and street outreach.": "تتيح المواد المطبوعة والرقمية للناس مواصلة التعلّم بعد الزيارة أو المعرض، كما تساعد المساجد والمؤسسات على توفير مصادر تعريفية موثوقة.",
-"titles in print": "عناوين مطبوعة",
-"Free": "مجاناً",
-"to request, UK-wide": "عند الطلب في أنحاء المملكة المتحدة",
-"Why it works": "لماذا هي فعّالة",
-"<i><svg><use href=\"#i-check\"></use></svg></i>Approved by qualified scholars": "<i><svg><use href=\"#i-check\"></use></svg></i>معتمدة من علماء مؤهلين",
-"<i><svg><use href=\"#i-check\"></use></svg></i>Clear, concise and engaging": "<i><svg><use href=\"#i-check\"></use></svg></i>واضحة وموجزة وجذابة",
-"<i><svg><use href=\"#i-check\"></use></svg></i>Available in multiple languages": "<i><svg><use href=\"#i-check\"></use></svg></i>متوفرة بلغات متعددة",
-"13 / A gift forever": "13 / هدية المسلم الجديد",
-"A welcome that lasts.": "ترحيبٌ يدوم.",
-"A welcome gift at a defining moment. We have delivered 10,000 packs to new Muslims across the UK, USA, Canada, New Zealand and Australia.": "حزمة ترحيبية تساعد المسلم الجديد على بدء رحلته. وصلت 10,000 هدية إلى مسلمين جدد في المملكة المتحدة والولايات المتحدة وكندا ونيوزيلندا وأستراليا.",
-"first boxes sent": "أولى الهدايا المرسلة",
-"boxes delivered": "هدية مُسلّمة",
-"goal · next 12 months": "الهدف · خلال 12 شهراً",
-"Community voice": "صوت المجتمع",
-"Receiving the New Muslim Box at my shahada was a turning point. It felt like a massive global community was standing right behind me.": "كان استلامي لهدية المسلم الجديد عند نطقي بالشهادة نقطة تحوّل؛ شعرت بأن مجتمعاً عالمياً كبيراً يقف خلفي.",
-"<i>S</i>Sarah <em></em><span>United Kingdom</span>": "<i>S</i>سارة <em></em><span>المملكة المتحدة</span>",
-"Project photograph": "صورة من المشروع",
-"15 / A place to belong": "15 / مكانٌ للانتماء",
-"Belonging, well-being and growth.": "الانتماء والرفاه والنمو.",
-"What began as one social space in 2022 is now a network of hubs across six UK communities, offering courses, events and friendship.": "ما بدأ عام 2022 كمساحة اجتماعية واحدة أصبح اليوم شبكة مراكز في ست مجتمعات بريطانية، تقدّم الدورات والفعاليات والصداقة.",
-"one social space": "مساحة اجتماعية واحدة",
-"UK communities today": "مجتمعات بريطانية اليوم",
-"new communities · next 12 months": "مجتمعاً جديداً · خلال 12 شهراً",
-"The Well-being Centre became my sanctuary… it gave me the sense of belonging I desperately needed.": "أصبح مركز الرفاه ملاذي… فقد منحني الشعور بالانتماء الذي كنت في أمسّ الحاجة إليه.",
-"<i>H</i>Hub member <em></em><span>United Kingdom</span>": "<i>H</i>عضو في أحد المراكز <em></em><span>المملكة المتحدة</span>",
-"17 / A journey of a lifetime": "17 / رحلة العمر",
-"Faith brought to life.": "إيمانٌ يُعاش واقعاً.",
-"Launched in 2026, our first experiential programme took new Muslims to Makkah and Madinah, learning wudu, salah and du’a where faith began.": "انطلق عام 2026 أول برامجنا التجريبية، فاصطحب مسلمين جدداً إلى مكة المكرمة والمدينة المنورة ليتعلّموا الوضوء والصلاة والدعاء حيث بدأت الرسالة.",
-"programme launched": "انطلاق البرنامج",
-"Umrah trip delivered": "رحلة عمرة منجزة",
-"trips · next 12 months": "رحلات · خلال 12 شهراً",
-"Going on the Umrah trip completely transformed my faith. Seeing the history come alive… built a deep, unshakeable confidence in my identity.": "غيّرت رحلة العمرة إيماني تماماً. رؤية التاريخ حيّاً أمامي… منحتني ثقة عميقة راسخة بهويتي.",
-"<i>P</i>Programme participant <em></em><span>2026 cohort</span>": "<i>P</i>مشارك في البرنامج <em></em><span>دفعة 2026</span>",
-"19 / Get involved": "19 / للتواصل والشراكة",
-"Be part of the cycle.": "كن جزءاً من الرحلة.",
-"Every journey needs people behind it.": "معاً لتعريف أوسع بالإسلام.",
-"Every visit, exhibition, booklet and box is made possible by people who give their time, skills and support.": "نسعى إلى بناء شراكات مثمرة مع المساجد والمدارس والمؤسسات المجتمعية، لتوسيع أثرنا وتقديم خدمات متكاملة تخدم المجتمع.",
-"Get involved": "للتواصل والشراكة",
-"Three ways to help": "ثلاث طرق للمساهمة",
-"<b>Donate</b>Support our work": "<b>تبرّع</b>ادعم عملنا",
-"<b>Volunteer</b>Give your time and skills": "<b>تطوّع</b>قدّم وقتك ومهاراتك",
-"<b>Partner with us</b>Host or collaborate with us": "<b>كن شريكاً</b>استضفنا أو تعاون معنا",
-"A Wholistic Da’wa Cycle.": "معاً لتعريف أوسع بالإسلام<br>ودعم أفضل للمسلم الجديد.",
-"7 Bridges Place, Parsons Green, London SW6 4HW<br>Registered Charity No. 1146212": "<span dir=\"ltr\">7 Bridges Place, Parsons Green, London SW6 4HW</span><br>جمعية خيرية مسجّلة رقم 1146212"
-};
 (function(){
-  const sheets=[...document.querySelectorAll('.sheet')];
+  const books={en:document.getElementById('book-en'),ar:document.getElementById('book-ar')};
   const prev=document.getElementById('prev'), next=document.getElementById('next');
   const pos=document.getElementById('position'), dots=document.getElementById('dots');
-  const frame=document.querySelector('.book-frame'), book=document.querySelector('.book');
-  const W=1588, H=560, KEY='di-booklet-sheet';
-  let current=0, mode='spread';
+  const frame=document.querySelector('.book-frame');
+  const W=1588, H=560, KEY='di-booklet-sheet', LKEY='di-booklet-lang';
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let lang='en', book=books.en, sheets=[], current=0, mode='spread';
 
-  sheets.forEach((s,i)=>{
+  Object.values(books).forEach(b=>b.querySelectorAll('.sheet').forEach(s=>{
     const lbl=document.createElement('div');lbl.className='sheet-label';lbl.textContent=s.dataset.label;s.prepend(lbl);
-    const d=document.createElement('button');d.setAttribute('aria-label','Go to '+s.dataset.label);d.onclick=()=>show(i);dots.append(d);
-  });
-
-  // ── Language: English (source HTML) / Arabic (AR dictionary or data-ar override) ──
-  const norm=h=>h.replace(/\s+/g,' ').trim(), i18n=[], LKEY='di-booklet-lang';
-  document.querySelectorAll('.page *, [data-ar]').forEach(el=>{
-    if(el.closest('svg')||i18n.some(t=>t.el.contains(el)))return;
-    const en=el.innerHTML, ar=el.dataset.ar!==undefined?el.dataset.ar:AR[norm(en)];
-    if(ar!==undefined)i18n.push({el,en,ar});
-  });
-  let lang='en';
-  function setLang(l){
-    lang=l==='ar'?'ar':'en';
-    document.documentElement.lang=lang;
-    i18n.forEach(t=>t.el.innerHTML=lang==='ar'?t.ar:t.en);
-    sheets.forEach(s=>{const lb=s.querySelector('.sheet-label');if(lb)lb.textContent=label(s)});
-    document.getElementById('lang-en').setAttribute('aria-pressed',lang==='en');
-    document.getElementById('lang-ar').setAttribute('aria-pressed',lang==='ar');
-    document.title=lang==='ar'?'من التعريف بالإسلام إلى دعم المسلم الجديد — Discover Islam':'A Wholistic Da’wa Cycle — Discover Islam';
-    try{localStorage.setItem(LKEY,lang)}catch(e){}
-    show(current);
-  }
-  window.setLang=setLang;
-  const label=s=>lang==='ar'&&s.dataset.labelAr?s.dataset.labelAr:s.dataset.label;
+  }));
+  // Viewer chrome: data-ar holds the Arabic label
+  const chrome=[...document.querySelectorAll('.viewer-header [data-ar]')].map(el=>({el,en:el.innerHTML,ar:el.dataset.ar}));
 
   function countUp(root){
     if(reduce) return;
@@ -921,9 +1001,9 @@ const AR={
     current=Math.max(0,Math.min(sheets.length-1,i));
     if(mode==='spread'){sheets.forEach((s,j)=>s.hidden=j!==current);countUp(sheets[current]);}
     prev.disabled=current===0; next.disabled=current===sheets.length-1;
-    pos.innerHTML='<b>'+label(sheets[current])+'</b> &nbsp;·&nbsp; '+(current+1)+' / '+sheets.length;
+    pos.innerHTML='<b>'+sheets[current].dataset.label+'</b> &nbsp;·&nbsp; '+(current+1)+' / '+sheets.length;
     [...dots.children].forEach((d,j)=>d.setAttribute('aria-current',j===current));
-    try{sessionStorage.setItem(KEY,current)}catch(e){}
+    try{sessionStorage.setItem(KEY,lang+':'+current)}catch(e){}
   }
 
   function fit(){
@@ -941,6 +1021,29 @@ const AR={
     }
   }
 
+  // English and Arabic are separate books; Arabic reads right-to-left (cover first, pages turn leftwards)
+  function setLang(l,start){
+    lang=l==='ar'?'ar':'en';
+    const rtl=lang==='ar';
+    document.documentElement.lang=lang;
+    document.body.classList.toggle('rtl',rtl);
+    books.en.hidden=rtl; books.ar.hidden=!rtl;
+    book=books[lang]; sheets=[...book.querySelectorAll('.sheet')];
+    chrome.forEach(t=>t.el.innerHTML=rtl?t.ar:t.en);
+    prev.textContent=rtl?'›':'‹'; next.textContent=rtl?'‹':'›';
+    prev.setAttribute('aria-label',rtl?'الصفحة السابقة':'Previous spread');
+    next.setAttribute('aria-label',rtl?'الصفحة التالية':'Next spread');
+    document.getElementById('lang-en').setAttribute('aria-pressed',!rtl);
+    document.getElementById('lang-ar').setAttribute('aria-pressed',rtl);
+    document.title=rtl?'من التعريف بالإسلام إلى دعم المسلم الجديد — Discover Islam':'A Wholistic Da’wa Cycle — Discover Islam';
+    try{localStorage.setItem(LKEY,lang)}catch(e){}
+    dots.innerHTML='';
+    sheets.forEach((s,i)=>{const d=document.createElement('button');d.setAttribute('aria-label',s.dataset.label);d.onclick=()=>show(i);dots.append(d);});
+    if(mode==='all') sheets.forEach(s=>s.hidden=false);
+    show(start||0); fit();
+  }
+  window.setLang=setLang;
+
   function setMode(m){
     mode=m;document.body.classList.toggle('overview',m==='all');
     document.getElementById('mode-spread').setAttribute('aria-pressed',m==='spread');
@@ -954,28 +1057,32 @@ const AR={
   document.getElementById('mode-spread').onclick=()=>setMode('spread');
   document.getElementById('mode-all').onclick=()=>setMode('all');
   document.getElementById('print').onclick=()=>window.print();
-  document.getElementById('lang-en').onclick=()=>setLang('en');
-  document.getElementById('lang-ar').onclick=()=>setLang('ar');
+  document.getElementById('lang-en').onclick=()=>{if(lang!=='en')setLang('en')};
+  document.getElementById('lang-ar').onclick=()=>{if(lang!=='ar')setLang('ar')};
   document.addEventListener('keydown',e=>{
     if(mode!=='spread')return;
-    if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();show(current+1)}
-    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(current-1)}
+    const fwd=lang==='ar'?'ArrowLeft':'ArrowRight', back=lang==='ar'?'ArrowRight':'ArrowLeft';
+    if(e.key===fwd||e.key==='PageDown'){e.preventDefault();show(current+1)}
+    if(e.key===back||e.key==='PageUp'){e.preventDefault();show(current-1)}
     if(e.key==='Home')show(0); if(e.key==='End')show(sheets.length-1);
   });
   let tx=null;
   document.querySelector('.stage').addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
-  document.querySelector('.stage').addEventListener('touchend',e=>{if(tx===null||mode!=='spread')return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)show(current+(dx<0?1:-1));tx=null},{passive:true});
+  document.querySelector('.stage').addEventListener('touchend',e=>{
+    if(tx===null||mode!=='spread')return;
+    const dx=e.changedTouches[0].clientX-tx;
+    if(Math.abs(dx)>50)show(current+((dx<0)===(lang!=='ar')?1:-1));
+    tx=null},{passive:true});
   window.addEventListener('beforeprint',()=>sheets.forEach(s=>s.hidden=false));
   window.addEventListener('afterprint',()=>setMode(mode));
   window.addEventListener('resize',fit);
 
-  let saved=0;try{saved=parseInt(sessionStorage.getItem(KEY),10)||0}catch(e){}
+  let startLang=new URLSearchParams(location.search).get('lang');
+  if(!startLang){try{startLang=localStorage.getItem(LKEY)}catch(e){}}
+  let start=0;
+  try{const s=(sessionStorage.getItem(KEY)||'').split(':');if(s[0]===(startLang==='ar'?'ar':'en'))start=parseInt(s[1],10)||0}catch(e){}
   const hash=parseInt((location.hash.match(/^#s(\d+)/)||[])[1],10);
-  show(Number.isInteger(hash)?hash:saved);
-  let savedLang=new URLSearchParams(location.search).get('lang');
-  if(!savedLang){try{savedLang=localStorage.getItem(LKEY)}catch(e){}}
-  if(savedLang==='ar')setLang('ar');
-  fit();
+  setLang(startLang==='ar'?'ar':'en',Number.isInteger(hash)?hash:start);
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
 })();
 </script>
