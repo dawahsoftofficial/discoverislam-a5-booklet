@@ -328,7 +328,7 @@ body.rtl .dots{flex-direction:row-reverse}
 .ar-map .nodes{fill:var(--di-gold-hi);stroke:#0A1D15;stroke-width:1.2}
 .ar-map figcaption{font:500 11px/1.6 var(--body);color:#ffffff99;margin-top:8px}
 .arcover,.arback{background:linear-gradient(135deg,#0B2117 0%,#0A1D15 50%,#123326 100%);color:#fff;display:flex;flex-direction:column;padding:46px 50px 40px}
-.arcover>*:not(.pattern),.arback>*:not(.pattern){position:relative}
+.arcover>*:not(.pattern),.arback>*:not(.pattern):not(.page-foot){position:relative}
 .arcover .logo img{height:44px;display:block}
 .arcover h1{font:700 52px/1.3 var(--display);margin-top:auto}
 .arcover h1 span{color:var(--di-gold-hi)}
@@ -343,6 +343,11 @@ body.rtl .dots{flex-direction:row-reverse}
 .arback .ar-glass{margin:auto 0}
 .arback .bottom{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
 .arback .bottom img{height:40px}
+/* Outside back cover reuses the English .back layout; keep the Latin wordmark in Outfit */
+#book-ar .back h2{line-height:1.5}
+#book-ar .back .nmc-logo b,#book-ar .back .nmc-logo i{font-family:"Outfit",sans-serif}
+#book-ar .back .nmc-logo b{letter-spacing:-.5px!important}
+#book-ar .back .nmc-logo i{letter-spacing:5.5px!important}
 .arback .bottom span{font:500 11px/1.4 "Mulish",sans-serif;color:#ffffffaa}
 
 /* ───────────── Print ───────────── */
@@ -931,8 +936,8 @@ body.rtl .dots{flex-direction:row-reverse}
   </article>
 </section>
 
-<!-- PDF page 10 — vision and impact (replaces the former pages 10–11) -->
-<section class="sheet single" data-label="الصفحة ١٠ · رؤيتنا وأثرنا" hidden>
+<!-- pages 10–11 — vision and impact, then contact and partnership -->
+<section class="sheet spread" data-label="الصفحتان ١٠–١١ · رؤيتنا وأثرنا والتواصل" hidden>
   <article class="page arp ardark on-dark right">
     <div class="pattern di" style="opacity:.25"></div>
     <span class="eyebrow">رؤيتنا وأثرنا</span>
@@ -949,12 +954,7 @@ body.rtl .dots{flex-direction:row-reverse}
     <p class="ar-note">رسالتنا تتجاوز الوصول إلى الأفراد؛ فنحن نعمل على تمكين المراكز لتوسيع أثرها في أنحاء بريطانيا.</p>
     <div class="page-foot"><b>١٠</b></div>
   </article>
-  <div class="blank"></div>
-</section>
-
-<!-- PDF page 12 — back cover -->
-<section class="sheet single" data-label="الغلاف الخلفي · للتواصل والشراكة" hidden>
-  <div class="blank"></div>
+  <!-- page 11 — contact and partnership -->
   <article class="page arback on-dark">
     <div class="pattern di" style="opacity:.25"></div>
     <span class="eyebrow">للتواصل والشراكة</span>
@@ -967,6 +967,23 @@ body.rtl .dots{flex-direction:row-reverse}
       <span class="line">7 Bridges Place, Parsons Green, London SW6 4HW</span>
     </div>
     <div class="bottom"><img src="assets/di-logo.png" alt="Discover Islam"><span class="ltr">Registered Charity No. 1146212</span></div>
+    <div class="page-foot"><b>١١</b></div>
+  </article>
+</section>
+
+<!-- page 12 — outside back cover -->
+<section class="sheet single" data-label="الغلاف الخلفي" hidden>
+  <div class="blank"></div>
+  <article class="page back">
+    <div class="pattern di" style="opacity:.25"></div>
+    <div class="marks" style="position:relative">
+      <img src="assets/di-logo.png" alt="Discover Islam">
+      <span class="sep"></span>
+      <div class="nmc-logo light"><b>New Muslim</b><i>CENTRE</i></div>
+    </div>
+    <h2 style="position:relative">من التعريف بالإسلام إلى دعم المسلم الجديد</h2>
+    <div class="rule"></div>
+    <p class="contact" dir="ltr" style="position:relative">discoverislam.co.uk<br>Registered Charity No. 1146212</p>
   </article>
 </section>
 
