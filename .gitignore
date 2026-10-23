@@ -1,0 +1,4 @@
+# print outputs (PDFs, .ai) are built locally with tools/build_print_pdf.py
+print/
+__pycache__/
+.playwright-mcp/
